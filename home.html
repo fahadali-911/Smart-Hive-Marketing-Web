@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartHive helps med spas improve the complete patient journey—from discovery and inquiry to booking, treatment, retention, and reactivation.">
+  <meta name="theme-color" content="#0c1a24">
+  <title>SmartHive Marketing | Patient Growth Systems for Med Spas</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230c1a24' stroke='%23c98a2c' stroke-width='4' d='M32 3 57 18v28L32 61 7 46V18z'/%3E%3Cpath fill='%232a5d4a' d='M32 16v32M16 32h32'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23e5a84b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    :root {
+      --cream: #faf8f5;
+      --bg-cream: #FAF8F5;
+      --bg-cream-tint: #F3EFE6;
+      --cream-deep: #f2eee6;
+      --white: #ffffff;
+      --bg-cream-card: #ffffff;
+      --navy: #0c1a24;
+      --navy-900: #0C1A24;
+      --navy-950: #081219;
+      --navy-850: #10212D;
+      --navy-800: #162B3A;
+      --navy-card: #0D1E26;
+      --navy-card-border: rgba(255, 255, 255, 0.08);
+      --navy-soft: #142733;
+      --ink: #10202a;
+      --text-dark: #0F1D27;
+      --muted: #5c6b76;
+      --text-muted: #536471;
+      --green: #2a5d4a;
+      --green-accent: #2A5D4A;
+      --green-light: #e9f3ee;
+      --green-glow: #10B981;
+      --emerald: #43d5a1;
+      --gold: #c98a2c;
+      --gold-accent: #C98A2C;
+      --gold-light: #f6ead4;
+      --line: #e5dfd4;
+      --border-light: #E8E3D8;
+      --border-card: #E4DFD3;
+      --serif: "Fraunces", Georgia, serif;
+      --font-serif: "Fraunces", Georgia, serif;
+      --sans: "Plus Jakarta Sans", Arial, sans-serif;
+      --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
+      --max: 1240px;
+      --container-max: 1240px;
+      --shadow: 0 24px 70px rgba(12, 26, 36, .11);
+      --shadow-card: 0 10px 30px -4px rgba(12, 26, 36, 0.06);
+      --shadow-elevated: 0 20px 45px -10px rgba(12, 26, 36, 0.16);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --motion-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --motion-base: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+      --motion-reveal: 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body.modal-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid rgba(201, 138, 44, .45); outline-offset: 4px; }
+
+    /*
+      WordPress embedding: page builders normally place Custom HTML inside a
+      narrow `.entry-content` column. This wrapper deliberately escapes that
+      column without relying on a particular WordPress theme or page ID.
+    */
+    #smarthive-landing {
+      width: 100vw;
+      max-width: none;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0;
+      overflow: clip;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    /*
+      WordPress page only: suppress the theme header and generated post title.
+      The landing page supplies its own header (`#siteHeader`), so leaving both
+      creates the large empty band shown above the navigation.
+    */
+    body.page-id-12 .wp-site-blocks > header:not(#siteHeader),
+    body.page-id-12 #masthead,
+    body.page-id-12 .site-header:not(#siteHeader),
+    body.page-id-12 .entry-header,
+    body.page-id-12 .wp-block-post-title {
+      display: none !important;
+    }
+    body.page-id-12 .wp-site-blocks > main,
+    body.page-id-12 #primary,
+    body.page-id-12 .site-main,
+    body.page-id-12 .entry-content,
+    body.page-id-12 .wp-block-post-content {
+      max-width: none !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .container { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+    .section { padding: 92px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--gold); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .serif { font-family: var(--serif); }
+    h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(3rem, 5.4vw, 5.1rem); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
+    h2 { margin-bottom: 18px; font-size: clamp(2.25rem, 4vw, 3.8rem); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; }
+    h3 { margin-bottom: 10px; font-size: 1rem; }
+    .lead { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.22rem); line-height: 1.75; }
+    .section-heading { max-width: 760px; margin-bottom: 46px; }
+    .section-heading.center { margin-inline: auto; text-align: center; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 13px 28px rgba(12, 26, 36, .18); }
+    .button i { transition: transform .25s ease; }
+    .button:hover i { transform: translateX(4px); }
+    .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); box-shadow: none; }
+    .button.secondary:hover { border-color: var(--green); color: var(--green); }
+
+    /* Canonical Header & Glossy Navbar Treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 223, 212, 0.7);
+      box-shadow: 0 2px 10px rgba(12, 26, 36, 0.02);
+      transition: background-color 300ms ease, box-shadow 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+      opacity: 0;
+      transition: opacity 300ms ease;
+      pointer-events: none;
+    }
+    .site-header.scrolled {
+      background-color: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(14px) saturate(120%);
+      -webkit-backdrop-filter: blur(14px) saturate(120%);
+      border-bottom-color: rgba(12, 26, 36, 0.1);
+      box-shadow: 0 8px 30px rgba(12, 26, 36, 0.07);
+    }
+    .site-header.scrolled::before {
+      opacity: 1;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--serif);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .brand-favicon-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(201, 138, 44, 0.2);
+    }
+    /* WordPress may strip data: image URLs in a Custom HTML block. */
+    .brand-logo .brand-favicon-img,
+    .drawer-brand .drawer-brand-img { display: none; }
+    .brand-logo::before,
+    .drawer-brand::before {
+      content: "✦";
+      display: grid;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      place-items: center;
+      border: 1px solid rgba(201, 138, 44, .85);
+      border-radius: 8px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(201, 138, 44, .2);
+    }
+    .brand-text-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .brand-name {
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .brand-name span {
+      font-weight: 400;
+      color: var(--green);
+      margin-left: 1px;
+    }
+    .brand-tag {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #929FA8;
+      text-transform: uppercase;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 6px 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--green);
+    }
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--green);
+      border-radius: 2px;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 14px rgba(12, 26, 36, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      white-space: nowrap;
+    }
+    .header-cta-btn:hover {
+      background: #081219;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(12, 26, 36, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+    .header-cta-btn .arrow {
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
+    .header-cta-btn:hover .arrow {
+      transform: translateX(4px);
+    }
+    .header-cta-btn .cta-mobile-text {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid rgba(12, 26, 36, 0.12);
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      color: var(--navy);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s ease;
+    }
+    .mobile-menu-toggle:hover {
+      background: #ffffff;
+      border-color: rgba(12, 26, 36, 0.25);
+      box-shadow: 0 2px 8px rgba(12, 26, 36, 0.08);
+    }
+    .hamburger-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--navy);
+      border-radius: 2px;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease, background-color 0.22s ease;
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer & Backdrop */
+    body.menu-open {
+      overflow: hidden !important;
+      touch-action: none;
+    }
+
+    .mobile-nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 20, 28, 0.58);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-nav-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      width: min(86vw, 380px);
+      height: 100vh;
+      height: 100dvh;
+      background-color: #0c1a24;
+      color: #faf8f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: -16px 0 48px rgba(8, 18, 25, 0.55);
+      transform: translateX(100%);
+      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .mobile-nav-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .drawer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    .drawer-brand-img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+    }
+    .drawer-brand-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .drawer-brand-name span {
+      color: #34d399;
+      font-weight: 400;
+    }
+    .drawer-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .drawer-close-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: scale(1.05);
+    }
+
+    .drawer-body {
+      padding: 28px 24px 20px;
+      flex: 1;
+    }
+    .drawer-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #34d399;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .drawer-eyebrow::before {
+      content: "";
+      width: 16px;
+      height: 1px;
+      background-color: #c98a2c;
+    }
+
+    .drawer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: rgba(250, 248, 245, 0.82);
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 600;
+      transition: all 0.22s ease;
+    }
+    .drawer-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(4px);
+    }
+    .drawer-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.35);
+      font-family: var(--sans);
+      letter-spacing: 0.05em;
+      min-width: 20px;
+    }
+    .drawer-label {
+      flex: 1;
+    }
+    .drawer-indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: all 0.25s ease;
+    }
+    .drawer-link.active {
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.08);
+    }
+    .drawer-link.active .drawer-num {
+      color: #34d399;
+    }
+    .drawer-link.active .drawer-indicator {
+      background-color: #34d399;
+      box-shadow: 0 0 10px rgba(52, 211, 153, 0.7);
+    }
+
+    .drawer-footer {
+      padding: 22px 24px 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 18, 25, 0.4);
+    }
+    .drawer-cta-btn {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #0c1a24;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s ease;
+    }
+    .drawer-cta-btn:hover {
+      background: #f2eee6;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+    .drawer-cta-btn i {
+      transition: transform 0.25s ease;
+    }
+    .drawer-cta-btn:hover i {
+      transform: translateX(4px);
+    }
+    .drawer-tagline {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .drawer-tagline strong {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: #aebec8;
+      text-transform: uppercase;
+    }
+    .drawer-tagline span {
+      display: block;
+      font-size: 0.72rem;
+      color: #798793;
+      margin-top: 2px;
+    }
+
+    .hero { min-height: min(760px, calc(100vh - 80px)); display: grid; align-items: center; padding: 62px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(360px, .83fr); align-items: center; gap: clamp(52px, 7vw, 96px); }
+    .hero-copy .lead { max-width: 650px; margin-bottom: 32px; }
+    .hero-copy h1 span { color: var(--green); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 25px; color: var(--muted); font-size: .78rem; font-weight: 600; }
+    .hero-note i { color: var(--green); }
+    .hero-visual { position: relative; width: 100%; height: 100%; min-height: 480px; }
+    .hero-photo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      max-height: 580px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--cream-deep);
+      box-shadow: 0 16px 40px -8px rgba(12, 26, 36, 0.12);
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+
+    .context {
+      padding: 42px 0;
+      border-block: 1px solid var(--line);
+      background: var(--cream-deep);
+    }
+    .context-grid { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 68px; }
+    .context-copy { display: grid; grid-template-columns: minmax(210px, .68fr) minmax(300px, 1fr); align-items: center; gap: 36px; }
+    .context-copy h2 { margin: 0; font-size: clamp(1.55rem, 2.5vw, 2.25rem); line-height: 1.15; }
+    .context-copy p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+    .context-points { display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid #d9d1c4; }
+    .context-point { padding: 8px 18px; border-right: 1px solid #d9d1c4; }
+    .context-point i { display: block; margin-bottom: 10px; color: var(--green); font-size: .88rem; }
+    .context-point strong { display: block; color: var(--ink); font-size: .65rem; letter-spacing: .09em; text-transform: uppercase; }
+
+    .problem { border-block: 1px solid var(--line); background: var(--white); }
+    .problem-grid { display: grid; grid-template-columns: .78fr 1.22fr; align-items: end; gap: 70px; }
+    .problem-copy h2 { max-width: 570px; }
+    .problem-copy .lead { max-width: 550px; margin-bottom: 0; }
+    .leak-journey { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 29px 0 11px; border-block: 1px solid var(--line); }
+    .leak-step { position: relative; min-height: 98px; padding: 13px 16px; border-left: 1px solid var(--line); }
+    .leak-step:first-child { border-left: 0; }
+    .leak-step .icon { color: var(--green); font-size: 1rem; }
+    .leak-step strong { display: block; margin-top: 13px; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+    .leak-step small { display: block; margin-top: 5px; color: var(--muted); font-size: .68rem; line-height: 1.45; }
+    .leak-step:not(:last-child)::after {
+      position: absolute;
+      z-index: 2;
+      top: 40px;
+      right: -8px;
+      width: 15px;
+      height: 15px;
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold);
+      content: "";
+    }
+
+    .system { background: var(--navy); color: var(--white); }
+    .system .eyebrow { color: var(--emerald); }
+    .system .section-heading p { color: #aebec8; }
+    .system .section-heading { margin-bottom: 52px; }
+    .stages { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); }
+    .stages::before { position: absolute; top: 32px; right: 8%; left: 8%; height: 1px; background: linear-gradient(90deg, var(--gold), var(--emerald)); content: ""; }
+    .stage { position: relative; z-index: 1; min-width: 0; padding-right: 22px; }
+    .stage:last-child { padding-right: 0; }
+    .stage-icon {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 24px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 50%;
+      background: var(--navy-soft);
+      color: var(--emerald);
+      box-shadow: 0 0 0 8px var(--navy);
+      transition: border-color .25s ease, transform .25s ease, color .25s ease;
+    }
+    .stage:hover .stage-icon { transform: translateY(-4px); border-color: var(--gold); color: var(--gold); }
+    .stage small { color: var(--gold); font-size: .64rem; font-weight: 800; letter-spacing: .12em; }
+    .stage h3 { margin: 8px 0 8px; color: var(--white); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+    .stage p { margin: 0; color: #a7b8c2; font-size: .72rem; line-height: 1.55; }
+    .continuous {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 52px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, .11);
+      color: #b5c4cc;
+      font-size: .76rem;
+    }
+    .continuous b { color: var(--emerald); letter-spacing: .1em; text-transform: uppercase; }
+    .system-link { color: var(--white); font-weight: 700; text-decoration: none; }
+    .system-link i { margin-left: 8px; color: var(--gold); transition: transform .2s ease; }
+    .system-link:hover i { transform: translateX(4px); }
+
+    .capabilities { background: var(--white); }
+    .capabilities-head { display: grid; grid-template-columns: 1fr .72fr; align-items: end; gap: 70px; margin-bottom: 48px; }
+    .capabilities-head .section-heading { margin-bottom: 0; }
+    .capabilities-intro { margin: 0 0 3px; color: var(--muted); font-size: .9rem; line-height: 1.75; }
+    .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+    .capability {
+      position: relative;
+      padding: 34px clamp(22px, 3vw, 42px) 36px;
+      border-left: 1px solid var(--line);
+      transition: background .25s ease;
+    }
+    .capability:first-child { border-left: 0; }
+    .capability:hover { background: var(--cream); }
+    .capability-icon { display: grid; width: 42px; height: 42px; margin-bottom: 27px; place-items: center; border-radius: 50%; background: var(--green-light); color: var(--green); }
+    .capability small { color: var(--gold); font-size: .62rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .capability h3 { margin: 7px 0 10px; font-family: var(--serif); font-size: 1.45rem; font-weight: 500; }
+    .capability > p { min-height: 50px; margin-bottom: 22px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+    .capability-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .capability-list li { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: #40515c; font-size: .65rem; font-weight: 600; }
+
+    .why { background: var(--cream-deep); }
+    .why-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; }
+    .why-intro { position: sticky; top: 122px; align-self: start; }
+    .why-intro .lead { max-width: 450px; }
+    .differences { border-top: 1px solid #d9d1c4; }
+    .difference { display: grid; grid-template-columns: 58px 1fr; gap: 22px; padding: 29px 0; border-bottom: 1px solid #d9d1c4; }
+    .difference-number { color: var(--gold); font-family: var(--serif); font-size: 1.1rem; }
+    .difference h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 500; }
+    .difference p { max-width: 640px; margin-bottom: 0; color: var(--muted); font-size: .9rem; line-height: 1.7; }
+
+    .proof { background: var(--white); }
+    .proof-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: stretch; gap: 70px; }
+    .proof-photo { position: relative; min-height: 520px; margin: 0; overflow: hidden; background: var(--cream-deep); }
+    .proof-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .proof-photo::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(8, 18, 25, .74)); content: ""; }
+    .proof-photo figcaption { position: absolute; z-index: 2; right: 28px; bottom: 25px; left: 28px; color: var(--white); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .proof-copy { align-self: center; }
+    .case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .case-meta span { padding: 7px 11px; border-radius: 999px; background: var(--green-light); color: var(--green); font-size: .64rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .proof-copy h2 { max-width: 670px; }
+    .case-flow { display: grid; gap: 0; margin: 28px 0 30px; border-top: 1px solid var(--line); }
+    .case-row { display: grid; grid-template-columns: 105px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .case-row dt { color: var(--gold); font-size: .67rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .case-row dd { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.6; }
+    .result-callout { display: flex; align-items: center; gap: 18px; padding: 18px 20px; border-left: 2px solid var(--gold); background: var(--cream); }
+    .result-callout strong { color: var(--green); font-family: var(--serif); font-size: 1.55rem; font-weight: 600; }
+    .result-callout span { color: var(--muted); font-size: .76rem; line-height: 1.5; }
+
+    .final-cta { padding: 82px 0; background: var(--navy); color: var(--white); }
+    .cta-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; }
+    .final-cta h2 { max-width: 820px; margin-bottom: 14px; }
+    .final-cta p { max-width: 710px; margin-bottom: 0; color: #afbdc6; line-height: 1.7; }
+    .final-cta .button { background: var(--gold); color: var(--navy); }
+
+    /* Site Footer (Canonical Design System) */
+    .site-footer {
+      background-color: #081219;
+      color: #A3BAC3;
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9375rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    .footer-brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .footer-brand-title span {
+      color: #929FA8;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+    .footer-brand-desc {
+      color: #798793;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      max-width: 360px;
+    }
+    .footer-col-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-links-list a {
+      color: #A3BAC3;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.25s ease, transform 0.25s ease;
+      display: inline-block;
+    }
+    .footer-links-list a:hover {
+      color: #FFFFFF;
+      transform: translateX(2px);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: #64748B;
+    }
+
+    /* Motion System Standardisation */
+    [data-reveal], .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal].visible, [data-reveal].revealed, .reveal.visible, .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @media (max-width: 992px) {
+      .header-inner {
+        height: 68px;
+      }
+      .nav-menu {
+        display: none !important;
+      }
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      .header-cta-btn {
+        padding: 9px 16px;
+        font-size: 0.8125rem;
+        height: 40px;
+        min-height: 40px;
+      }
+      .header-cta-btn .cta-desktop-text {
+        display: none;
+      }
+      .header-cta-btn .cta-mobile-text {
+        display: inline;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-tag {
+        display: none;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .header-cta-btn {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+      }
+    }
+
+    @media (min-width: 993px) {
+      .mobile-menu-toggle,
+      .mobile-nav-backdrop,
+      .mobile-nav-drawer {
+        display: none !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-nav-drawer,
+      .mobile-nav-backdrop,
+      .hamburger-bar,
+      .drawer-link {
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid { gap: 48px; }
+      .stages { grid-template-columns: repeat(3, 1fr); gap: 40px 26px; }
+      .stages::before { display: none; }
+      .stage { padding-right: 0; }
+      .problem-grid, .why-grid, .proof-grid { gap: 48px; }
+      .context-grid { grid-template-columns: 1fr; gap: 30px; }
+      .context-points { border-left: 0; }
+      .capabilities-head { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    @media (max-width: 900px) {
+      .container { width: min(calc(100% - 38px), var(--max)); }
+      .section { padding: 76px 0; }
+      .menu-toggle { display: grid; place-items: center; }
+      .nav .button { display: none; }
+      .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 19px 20px;
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+      .nav-links.open { display: grid; }
+      .nav-links > a { padding: 14px 5px; }
+      .nav-links > a::after { bottom: 8px; }
+      .hero { min-height: auto; padding-top: 72px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { max-width: 760px; }
+      .hero-visual { min-height: 500px; }
+      .problem-grid, .why-grid, .proof-grid { grid-template-columns: 1fr; }
+      .context-copy { grid-template-columns: 1fr; gap: 14px; }
+      .problem-grid { align-items: start; }
+      .capability-grid { grid-template-columns: 1fr; }
+      .capability { border-top: 1px solid var(--line); border-left: 0; }
+      .capability:first-child { border-top: 0; }
+      .capability > p { min-height: 0; }
+      .why-intro { position: static; }
+      .proof-photo { min-height: 470px; }
+      .cta-row { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 30px), var(--max)); }
+      .section { padding: 64px 0; }
+      h1 { font-size: clamp(2.75rem, 13vw, 4rem); }
+      h2 { font-size: clamp(2.05rem, 10vw, 3rem); }
+      .nav { min-height: 72px; }
+      .nav-links { top: 72px; }
+      .brand-name { font-size: 1.2rem; }
+      .brand-mark { width: 31px; }
+      .hero { padding: 54px 0 62px; }
+      .hero-actions { display: grid; }
+      .hero-actions .button { width: 100%; }
+      .hero-visual { min-height: 420px; }
+      .hero-photo { border-radius: 16px; }
+      .context { padding: 36px 0; }
+      .context-points { grid-template-columns: 1fr; }
+      .context-point { display: grid; grid-template-columns: 28px 1fr; align-items: center; padding: 12px 3px; border-top: 1px solid #d9d1c4; border-right: 0; }
+      .context-point:first-child { border-top: 0; }
+      .context-point i { margin-bottom: 0; }
+      .leak-journey { grid-template-columns: 1fr; padding: 0; }
+      .leak-step { display: grid; grid-template-columns: 30px 1fr; min-height: 0; padding: 17px 5px; border-top: 1px solid var(--line); border-left: 0; }
+      .leak-step:first-child { border-top: 0; }
+      .leak-step strong { margin-top: 0; }
+      .leak-step small { grid-column: 2; }
+      .leak-step:not(:last-child)::after { top: auto; right: auto; bottom: -7px; left: 7px; }
+      .stages { grid-template-columns: 1fr 1fr; gap: 34px 22px; }
+      .stage-icon { width: 54px; height: 54px; margin-bottom: 19px; }
+      .continuous { display: grid; }
+      .difference { grid-template-columns: 42px 1fr; }
+      .proof-photo { min-height: 390px; }
+      .case-row { grid-template-columns: 1fr; gap: 7px; }
+      .result-callout { align-items: flex-start; flex-direction: column; }
+      .final-cta { padding: 65px 0; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 34px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+      .modal { padding: 12px; }
+      .modal-panel { padding: 30px 20px 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+    }
+
+    @media (max-width: 410px) {
+      .brand-sub { display: none; }
+      .stages { grid-template-columns: 1fr; }
+      .stage { display: grid; grid-template-columns: 52px 1fr; column-gap: 18px; }
+      .stage-icon { grid-row: 1 / span 3; }
+      .stage h3 { margin-top: 4px; }
+      .stage p { grid-column: 2; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="audit-modal.css">
+</head>
+<body>
+  <div id="smarthive-landing">
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="home.html" class="brand-logo" id="header-logo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGl2ZUdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTYyQjNBIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODEyMTkiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGN0QwNzAiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjQzk4QTJDIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5QTYyMTgiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJlbWVyYWxkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzNEQzOTkiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA1OTY2OSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJnbG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMS41IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJibHVyIiBvcGVyYXRvcj0ib3ZlciIgLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBIZXhhZ29uIE91dGVyIFNoZWxsIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMzIsNCA1NiwxOCA1Niw0NiAzMiw2MCA8LDQ2IDgsMTgiIGZpbGw9InVybCgjaGl2ZUdyYWQpIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjIiIC8+CgogIDwhLS0gSW5uZXIgR2VvbWV0cmljIEhvbmV5Y29tYiBTdHJ1Y3R1cmUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiwxMCA1MSwyMSA1MSw0MyAzMiw1NCAxMyw0MyAxMywyMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIwMSwgMTM4LCA0NCwgMC4yNSkiIHN0cm9rZS13aWR0aD0iMS4yIiAvPgoKICA8IS0tIENlbnRlciBBZXN0aGV0aWMgU3BhcmsgLyBNZWRpY2FsIENyb3NzIE1vdGlmIC0tPgogIDwhLS0gVG9wIExlYWYgLyBQZXRhbCAtLT4KICA8cGF0aCBkPSJNIDMyIDE4IEMgMzAgMjQsIDI4IDI3LCAzMiAzMiBDIDM2IDI3LCAzNCAyNCwgMzIgMTggWiIgZmlsbD0idXJsKCNnb2xkR3JhZCkiIGZpbHRlcj0idXJsKCNnbG93KSIgLz4KICA8IS0tIEJvdHRvbSBMZWFmIC8gUGV0YWwgLS0+CiAgPHBhdGggZD0iTSAzMiA0NiBDIDMwIDQwLCAyOCAzNywgMzIgMzIgQyAzNiAzNywgMzQgNDAsIDMyIDQ2IFoiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPCEtLSBMZWZ0IFBldGFsIC0tPgogIDxwYXRoIGQ9Ik0gMTggMzIgQyAyNCAzMCwgMjcgMjgsIDMyIDMyIEMgMjcgMzYsIDI0IDM0LCAxOCAzMiBaIiBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgZmlsdGVyPSJ1cmwoI2dsb3cpIiAvPgogIDwhLS0gUmlnaHQgUGV0YWwgLS0+CiAgPHBhdGggZD0iTSA0NiAzMiBDIDQwIDMwLCAzNyAyOCwgMzIgMzIgQyAzNyAzNiwgNDAgMzQsIDQ2IDMyIFoiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CgogIDwhLS0gQ2VudHJhbCBQdWxzZSAvIEdyb3d0aCBDb3JlIERvdCAtLT4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzLjIiIGZpbGw9InVybCgjZW1lcmFsZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzREMzk5IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNiIgLz4KPC9zdmc+Cg==" alt="SmartHive Icon" class="brand-favicon-img" />
+        <div class="brand-text-wrap">
+          <span class="brand-name">Smart <span>Hive</span></span>
+          <span class="brand-tag">MARKETING</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="primary-nav">
+          <li><a href="home.html" class="nav-link active">Home</a></li>
+          <li><a href="grow.html" class="nav-link">How We Grow</a></li>
+          <li><a href="growth leak.html" class="nav-link">Growth Leaks</a></li>
+          <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary header-cta-btn open-audit-modal js-open-audit" id="header-audit-btn">
+          <span class="cta-desktop-text">Book a Free Audit</span>
+          <span class="cta-mobile-text">Free Audit</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Canonical Mobile Navigation Drawer & Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="home.html" class="drawer-brand" aria-label="SmartHive Home">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGl2ZUdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTYyQjNBIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODEyMTkiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGN0QwNzAiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjQzk4QTJDIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5QTYyMTgiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJlbWVyYWxkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzNEQzOTkiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA1OTY2OSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJnbG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMS41IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJibHVyIiBvcGVyYXRvcj0ib3ZlciIgLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBIZXhhZ29uIE91dGVyIFNoZWxsIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMzIsNCA1NiwxOCA1Niw0NiAzMiw2MCA4LDQ2IDgsMTgiIGZpbGw9InVybCgjaGl2ZUdyYWQpIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjIiIC8+CgogIDwhLS0gSW5uZXIgR2VvbWV0cmljIEhvbmV5Y29tYiBTdHJ1Y3R1cmUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiwxMCA1MSwyMSA1MSw0MyAzMiw1NCAxMyw0MyAxMywyMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIwMSwgMTM4LCA0NCwgMC4yNSkiIHN0cm9rZS13aWR0aD0iMS4yIiAvPgoKICA8IS0tIENlbnRlciBBZXN0aGV0aWMgU3BhcmsgLyBNZWRpY2FsIENyb3NzIE1vdGlmIC0tPgogIDwhLS0gVG9wIExlYWYgLyBQZXRhbCAtLT4KICA8cGF0aCBkPSJNIDMyIDE4IEMgMzAgMjQsIDI4IDI3LCAzMiAzMiBDIDM2IDI3LCAzNCAyNCwgMzIgMTggWiIgZmlsbD0idXJsKCNnb2xkR3JhZCkiIGZpbHRlcj0idXJsKCNnbG93KSIgLz4KICA8IS0tIEJvdHRvbSBMZWFmIC8gUGV0YWwgLS0+CiAgPHBhdGggZD0iTSAzMiA0NiBDIDMwIDQwLCAyOCAzNywgMzIgMzIgQyAzNiAzNywgMzQgNDAsIDMyIDQ2IFoiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPCEtLSBMZWZ0IFBldGFsIC0tPgogIDxwYXRoIGQ9Ik0gMTggMzIgQyAyNCAzMCwgMjcgMjgsIDMyIDMyIEMgMjcgMzYsIDI0IDM0LCAxOCAzMiBaIiBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgZmlsdGVyPSJ1cmwoI2dsb3cpIiAvPgogIDwhLS0gUmlnaHQgUGV0YWwgLS0+CiAgPHBhdGggZD0iTSA0NiAzMiBDIDQwIDMwLCAzNyAyOCwgMzIgMzIgQyAzNyAzNiwgNDAgMzQgNDAgMzIgIFoiIGZpbGw9InVybCgjZ2xvdykiIC8+CgogIDwhLS0gQ2VudHJhbCBQdWxzZSAvIEdyb3d0aCBDb3JlIERvdCAtLT4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzLjIiIGZpbGw9InVybCgjZW1lcmFsZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzREMzk5IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNiIgLz4KPC9zdmc+Cg==" alt="SmartHive" class="drawer-brand-img" />
+        <span class="drawer-brand-name">Smart <span>Hive</span></span>
+      </a>
+      <button class="drawer-close-btn" id="drawer-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-eyebrow">EXPLORE</div>
+      <nav class="drawer-nav" aria-label="Mobile Navigation Menu">
+        <ul class="drawer-menu">
+          <li>
+            <a href="home.html" class="drawer-link active">
+              <span class="drawer-num">01</span>
+              <span class="drawer-label">Home</span>
+              <span class="drawer-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="grow.html" class="drawer-link">
+              <span class="drawer-num">02</span>
+              <span class="drawer-label">How We Grow</span>
+              <span class="drawer-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="growth leak.html" class="drawer-link">
+              <span class="drawer-num">03</span>
+              <span class="drawer-label">Growth Leaks</span>
+              <span class="drawer-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="case-studies.html" class="drawer-link">
+              <span class="drawer-num">04</span>
+              <span class="drawer-label">Case Studies</span>
+              <span class="drawer-indicator"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="drawer-footer">
+      <button class="drawer-cta-btn open-audit-modal js-open-audit" type="button">
+        Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </button>
+      <div class="drawer-tagline">
+        <strong>SMART HIVE MARKETING</strong>
+        <span>Independent & Regional Med Spa Growth Systems</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Patient growth systems for med spas</p>
+          <h1>Build a Patient Growth System, <span>Not Just More Traffic.</span></h1>
+          <p class="lead">SmartHive connects the journey from patient discovery through booking, treatment, and return—so growth is built around the whole practice, not one marketing channel.</p>
+          <div class="hero-actions">
+            <button class="button js-open-audit" type="button">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a class="button secondary" href="grow.html">See How We Grow <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <p class="hero-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Built for med spas and aesthetic practices</p>
+        </div>
+        <div class="hero-visual" data-reveal>
+          <div class="hero-photo">
+            <!-- Image source: Pexels / Gustavo Fring -->
+            <img src="https://images.pexels.com/photos/7446684/pexels-photo-7446684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=1500&amp;fit=crop" alt="Dermatology specialist and patient reviewing a treatment plan on a tablet" width="1200" height="1500" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="context" aria-labelledby="context-title">
+      <div class="container context-grid" data-reveal>
+        <div class="context-copy">
+          <h2 id="context-title">Growth does not happen at one touchpoint.</h2>
+          <p>Patients move through discovery, evaluation, booking, treatment, and return. SmartHive connects those moments instead of optimizing each one in isolation.</p>
+        </div>
+        <div class="context-points" aria-label="Areas of patient growth">
+          <div class="context-point"><i class="fa-solid fa-bullseye" aria-hidden="true"></i><strong>Acquisition</strong></div>
+          <div class="context-point"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><strong>Patient experience</strong></div>
+          <div class="context-point"><i class="fa-solid fa-rotate" aria-hidden="true"></i><strong>Retention</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem" id="growth-problems">
+      <div class="container problem-grid">
+        <div class="problem-copy" data-reveal>
+          <p class="eyebrow">The growth problem</p>
+          <h2>Growth Usually Leaks Between the Click and the Return Visit.</h2>
+          <p class="lead">A practice can generate demand and still lose momentum through weak conversion, slow follow-up, booking friction, or missed retention opportunities.</p>
+        </div>
+        <div class="leak-journey" aria-label="Patient journey bottlenecks" data-reveal>
+          <div class="leak-step"><i class="icon fa-solid fa-arrow-pointer" aria-hidden="true"></i><strong>Traffic</strong><small>Right demand</small></div>
+          <div class="leak-step"><i class="icon fa-solid fa-message" aria-hidden="true"></i><strong>Inquiry</strong><small>Clear intent</small></div>
+          <div class="leak-step"><i class="icon fa-solid fa-calendar-check" aria-hidden="true"></i><strong>Booking</strong><small>Less friction</small></div>
+          <div class="leak-step"><i class="icon fa-solid fa-heart-pulse" aria-hidden="true"></i><strong>Treatment</strong><small>Better experience</small></div>
+          <div class="leak-step"><i class="icon fa-solid fa-rotate" aria-hidden="true"></i><strong>Return</strong><small>Next visit</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section system" id="how-it-works">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">The SmartHive patient growth system</p>
+          <h2>Six stages. One connected growth journey.</h2>
+          <p class="lead">Each stage has one clear job—and every stage strengthens the next.</p>
+        </div>
+        <div class="stages">
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div><div><small>01</small><h3>Acquire</h3></div><p>Get found by the right patients.</p></article>
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div><div><small>02</small><h3>Convert</h3></div><p>Turn attention into inquiry.</p></article>
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div><div><small>03</small><h3>Book</h3></div><p>Turn inquiries into appointments.</p></article>
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div><div><small>04</small><h3>Treat</h3></div><p>Build a better patient experience.</p></article>
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></div><div><small>05</small><h3>Retain</h3></div><p>Turn appointments into relationships.</p></article>
+          <article class="stage" data-reveal><div class="stage-icon"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></div><div><small>06</small><h3>Reactivate</h3></div><p>Reconnect lost momentum.</p></article>
+        </div>
+        <div class="continuous" data-reveal>
+          <span><b>Continuous across every stage</b> &nbsp; Measure performance &bull; Identify bottlenecks &bull; Optimize the journey</span>
+          <a class="system-link" href="grow.html">Explore How We Grow <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capabilities" id="capabilities">
+      <div class="container">
+        <div class="capabilities-head" data-reveal>
+          <div class="section-heading">
+            <p class="eyebrow">What we actually build</p>
+            <h2>Strategy becomes useful when it becomes a system.</h2>
+          </div>
+          <p class="capabilities-intro">SmartHive turns patient-journey insight into focused demand, conversion, booking, retention, and recovery infrastructure.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability" data-reveal>
+            <div class="capability-icon"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></div>
+            <small>01 / Create demand</small>
+            <h3>Demand systems</h3>
+            <p>Build visibility around the treatments and patient concerns that create qualified demand.</p>
+            <ul class="capability-list"><li>Local SEO</li><li>Google Ads</li><li>Meta Campaigns</li><li>Treatment Landing Pages</li></ul>
+          </article>
+          <article class="capability" data-reveal>
+            <div class="capability-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></div>
+            <small>02 / Reduce friction</small>
+            <h3>Conversion + booking</h3>
+            <p>Make the path from interest to scheduled consultation faster, clearer, and easier to act on.</p>
+            <ul class="capability-list"><li>Conversion UX</li><li>Lead Capture</li><li>Speed-to-Lead</li><li>CRM + SMS</li><li>Booking Automation</li></ul>
+          </article>
+          <article class="capability" data-reveal>
+            <div class="capability-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+            <small>03 / Compound value</small>
+            <h3>Retention + recovery</h3>
+            <p>Support the next visit, strengthen patient relationships, and reconnect dormant opportunity.</p>
+            <ul class="capability-list"><li>Rebooking</li><li>Membership</li><li>Reviews</li><li>Referrals</li><li>Reactivation</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="container why-grid">
+        <div class="why-intro" data-reveal>
+          <p class="eyebrow">Why SmartHive</p>
+          <h2>Built around how med-spa growth actually happens.</h2>
+          <p class="lead">The strategy starts with the patient journey and focuses effort where momentum is being lost.</p>
+        </div>
+        <div class="differences">
+          <article class="difference" data-reveal><span class="difference-number">01</span><div><h3>Full-journey thinking</h3><p>We look beyond traffic to understand what happens through inquiry, booking, treatment, and return.</p></div></article>
+          <article class="difference" data-reveal><span class="difference-number">02</span><div><h3>Med-spa-specific systems</h3><p>The journey reflects how aesthetic patients discover, evaluate, book, experience care, and decide to return.</p></div></article>
+          <article class="difference" data-reveal><span class="difference-number">03</span><div><h3>Bottleneck-first optimization</h3><p>We prioritize the point with the greatest opportunity instead of adding tactics that create more noise.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof" id="proof">
+      <span id="sample-audit" aria-hidden="true"></span>
+      <div class="container proof-grid">
+        <figure class="proof-photo" data-reveal>
+          <!-- Image source: Pexels / Ivan S -->
+          <img src="https://images.pexels.com/photos/5659055/pexels-photo-5659055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=1500&amp;fit=crop" alt="Aesthetic specialist providing a professional facial skin treatment" width="1200" height="1500" loading="lazy" decoding="async">
+          <figcaption>From underused capacity to a focused patient-growth system</figcaption>
+        </figure>
+        <div class="proof-copy" data-reveal>
+          <p class="eyebrow">A focused growth story</p>
+          <div class="case-meta"><span>Independent boutique med spa</span><span>One location</span></div>
+          <h2>Finding the opportunity behind an underused treatment device.</h2>
+          <dl class="case-flow">
+            <div class="case-row"><dt>Challenge</dt><dd>A $140,000 RF microneedling device was operating at 22% capacity after six months.</dd></div>
+            <div class="case-row"><dt>Diagnosis</dt><dd>The website led with the device brand rather than patient concerns, while the dormant database remained unsegmented.</dd></div>
+            <div class="case-row"><dt>System</dt><dd>Condition-focused landing pages paired with a 14-day reactivation campaign to 920 past patients.</dd></div>
+          </dl>
+          <div class="result-callout"><strong>34 packages</strong><span>sold in 45 days with zero additional media ad spend.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="final-cta">
+      <div class="container cta-row" data-reveal>
+        <div>
+          <p class="eyebrow">Ready to find your growth bottleneck?</p>
+          <h2>See Where Your Patient Journey Is Losing Momentum.</h2>
+          <p>We’ll examine the journey from discovery through retention and identify where the highest-leverage improvements may exist.</p>
+        </div>
+        <button class="button js-open-audit" type="button">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer-brand-title">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iaGl2ZUdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTYyQjNBIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODEyMTkiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGN0QwNzAiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjQzk4QTJDIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5QTYyMTgiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJlbWVyYWxkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzNEQzOTkiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA1OTY2OSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJnbG93IiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMS41IiByZXN1bHQ9ImJsdXIiIC8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJibHVyIiBvcGVyYXRvcj0ib3ZlciIgLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KCiAgPCEtLSBIZXhhZ29uIE91dGVyIFNoZWxsIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMzIsNCA1NiwxOCA1Niw0NiAzMiw2MCA4LDQ2IDgsMTgiIGZpbGw9InVybCgjaGl2ZUdyYWQpIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjIiIC8+CgogIDwhLS0gSW5uZXIgR2VvbWV0cmljIEhvbmV5Y29tYiBTdHJ1Y3R1cmUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiwxMCA1MSwyMSA1MSw0MyAzMiw1NCAxMyw0MyAxMywyMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIwMSwgMTM4LCA0NCwgMC4yNSkiIHN0cm9rZS13aWR0aD0iMS4yIiAvPgoKICA8IS0tIENlbnRlciBBZXN0aGV0aWMgU3BhcmsgLyBNZWRpY2FsIENyb3NzIE1vdGlmIC0tPgogIDwhLS0gVG9wIExlYWYgLyBQZXRhbCAtLT4KICA8cGF0aCBkPSJNIDMyIDE4IEMgMzAgMjQsIDI4IDI3LCAzMiAzMiBDIDM2IDI3LCAzNCAyNCwgMzIgMTggWiIgZmlsbD0idXJsKCNnb2xkR3JhZCkiIGZpbHRlcj0idXJsKCNnbG93KSIgLz4KICA8IS0tIEJvdHRvbSBMZWFmIC8gUGV0YWwgLS0+CiAgPHBhdGggZD0iTSAzMiA0NiBDIDMwIDQwLCAzOCAzNywgMzIgMzIgQyAzNiAzNywgMzQgNDAsIDMyIDQ2IFoiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPCEtLSBMZWZ0IFBldGFsIC0tPgogIDxwYXRoIGQ9Ik0gMTggMzIgQyAyNCAzMCwgMjcgMjgsIDMyIDMyIEMgMjcgMzYsIDI0IDM0LCAxOCAzMiBaIiBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgZmlsdGVyPSJ1cmwoI2dsb3cpIiAvPgogIDwhLS0gUmlnaHQgUGV0YWwgLS0+CiAgPHBhdGggZD0iTSA0NiAzMiBDIDQwIDMwLCAzNyAyOCwgMzIgMzIgQyAzNyAzNiwgNDAgMzQsIDQ2IDMyIFoiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CgogIDwhLS0gQ2VudHJhbCBQdWxzZSAvIEdyb3d0aCBDb3JlIERvdCAtLT4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzLjIiIGZpbGw9InVybCgjZW1lcmFsZEdyYWQpIiBmaWx0ZXI9InVybCgjZ2xvdykiIC8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzREMzk5IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNiIgLz4KPC9zdmc+Cg==" alt="SmartHive Icon" style="width: 28px; height: 28px; border-radius: 6px;" />
+            <div>SmartHive <span>Marketing</span></div>
+          </div>
+          <p class="footer-brand-desc">
+            Med Spa Growth &amp; Revenue Optimization. Diagnosing patient journey bottlenecks and building systems that scale aesthetics clinics.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="grow.html">How We Grow</a></li>
+            <li><a href="growth leak.html">Growth Leaks</a></li>
+            <li><a href="#sample-audit">Diagnostic Sample</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="#final-cta">Process</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Solutions -->
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <ul class="footer-links-list">
+            <li><a href="grow.html#pillar-02">Patient Conversion Systems</a></li>
+            <li><a href="grow.html#pillar-01">Local Search Domination</a></li>
+            <li><a href="grow.html#pillar-03">Lead Protection &amp; Speed-to-Lead</a></li>
+            <li><a href="grow.html#pillar-05">Retention &amp; Reactivation</a></li>
+            <li><a href="grow.html#pillar-04">Membership MRR Optimization</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Action -->
+        <div>
+          <div class="footer-col-title">Get Started</div>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="open-audit-modal js-open-audit" style="color: var(--gold); font-weight: 700;">Request Growth Audit &rarr;</a></li>
+            <li><a href="#sample-audit">Sample Diagnostic</a></li>
+            <li><a href="growth leak.html">Revenue Leaks Teardown</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SmartHive Marketing. All rights reserved. Built exclusively for aesthetics practices.</div>
+        <div>Independent &amp; Regional Med Spa Growth Systems</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="site-audit-modal" id="audit-modal" role="dialog" aria-modal="true" aria-labelledby="audit-title" aria-describedby="audit-description" aria-hidden="true">
+    <div class="site-audit-dialog" role="document">
+      <button class="site-audit-close" type="button" aria-label="Close audit form"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <p class="site-audit-eyebrow">Complimentary Growth Diagnostic</p>
+      <h2 class="site-audit-title" id="audit-title">Book Your Free Growth Audit</h2>
+      <p class="site-audit-copy" id="audit-description">Tell us a little about your practice. We’ll use this information to understand your patient journey, growth priorities, and where friction may be occurring.</p>
+      <form class="site-audit-form" id="site-audit-form" novalidate>
+        <div class="site-audit-grid">
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-practice">Med Spa / Practice Name *</label><input class="site-audit-control" id="audit-practice" name="practice" autocomplete="organization" placeholder="e.g. Aura Aesthetics" required><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-url">Website URL *</label><input class="site-audit-control" id="audit-url" name="website" type="url" autocomplete="url" placeholder="https://yourmedspa.com" required><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-name">Your Name *</label><input class="site-audit-control" id="audit-name" name="name" autocomplete="name" placeholder="Dr. Jane Doe / Owner" required><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-email">Direct Work Email *</label><input class="site-audit-control" id="audit-email" name="email" type="email" autocomplete="email" placeholder="owner@yourmedspa.com" required><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-locations">Number of Locations *</label><select class="site-audit-control" id="audit-locations" name="locations" required><option value="1">1 Location — Independent</option><option value="2-3">2–3 Locations — Regional</option><option value="4+">4+ Locations — Multi-Location</option></select><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field"><label class="site-audit-label" for="audit-focus">Primary Focus Area *</label><select class="site-audit-control" id="audit-focus" name="focus" required><option value="injectables">Injectables / Botox / Fillers</option><option value="laser">Laser / Energy-Based Treatments</option><option value="skin">Skin / Facial Treatments</option><option value="body">Body Contouring</option><option value="membership">Membership / Recurring Treatments</option><option value="multi">Multi-Service Med Spa</option><option value="other">Other / Mixed Focus</option></select><span class="site-field-error" aria-live="polite"></span></div>
+          <div class="site-audit-field site-audit-field--full"><label class="site-audit-label" for="audit-priority">Current Growth Priority</label><textarea class="site-audit-control" id="audit-priority" name="priority" placeholder="What part of the patient journey would you most like to improve?"></textarea><span class="site-field-error" aria-live="polite"></span></div>
+        </div>
+        <button class="site-audit-submit" type="submit">Request My Free Audit <span aria-hidden="true">→</span></button>
+        <p class="site-audit-status" role="status" aria-live="polite"></p>
+        <p class="site-audit-note">Your information is kept confidential and used only to evaluate your growth inquiry.</p>
+      </form>
+    </div>
+  </div>
+
+  </div><!-- /#smarthive-landing -->
+
+  <script>
+    (() => {
+      const body = document.body;
+      const toggleBtn = document.getElementById('mobile-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const backdrop = document.getElementById('mobile-nav-backdrop');
+      const drawerCloseBtn = document.getElementById('drawer-close');
+      const siteHeader = document.getElementById('siteHeader') || document.querySelector('.site-header');
+
+      // Canonical Mobile Drawer Navigation Controller
+      if (toggleBtn && drawer && backdrop) {
+        let lastFocusedNav = null;
+
+        const openMenu = () => {
+          lastFocusedNav = document.activeElement;
+          body.classList.add('menu-open');
+          drawer.classList.add('is-open');
+          backdrop.classList.add('is-open');
+          toggleBtn.classList.add('is-open');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          toggleBtn.setAttribute('aria-label', 'Close navigation menu');
+          drawer.setAttribute('aria-hidden', 'false');
+          backdrop.setAttribute('aria-hidden', 'false');
+
+          setTimeout(() => {
+            if (drawerCloseBtn) drawerCloseBtn.focus();
+          }, 100);
+        };
+
+        const closeMenu = () => {
+          body.classList.remove('menu-open');
+          drawer.classList.remove('is-open');
+          backdrop.classList.remove('is-open');
+          toggleBtn.classList.remove('is-open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+          drawer.setAttribute('aria-hidden', 'true');
+          backdrop.setAttribute('aria-hidden', 'true');
+
+          if (lastFocusedNav && typeof lastFocusedNav.focus === 'function') {
+            lastFocusedNav.focus();
+          }
+        };
+
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (drawer.classList.contains('is-open')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        if (drawerCloseBtn) {
+          drawerCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMenu();
+          });
+        }
+
+        backdrop.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+            closeMenu();
+          }
+        });
+
+        // Close drawer when selecting any link or CTA inside drawer
+        drawer.querySelectorAll('a, button.js-open-audit, button.open-audit-modal').forEach(el => {
+          el.addEventListener('click', () => {
+            closeMenu();
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 992 && drawer.classList.contains('is-open')) {
+            closeMenu();
+          }
+        }, { passive: true });
+
+        // Expose closeMenu for external triggers if needed
+        window.closeSmartHiveMobileMenu = closeMenu;
+      }
+
+      // Sticky Header Scroll State
+      if (siteHeader) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 20) {
+            siteHeader.classList.add('scrolled');
+          } else {
+            siteHeader.classList.remove('scrolled');
+          }
+        }, { passive: true });
+      }
+
+      // Motion System Reveal Observer
+      const revealItems = document.querySelectorAll('[data-reveal], .reveal');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible', 'revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealItems.forEach(item => observer.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('visible', 'revealed'));
+      }
+    })();
+  </script>
+  <script src="audit-modal.js"></script>
+</body>
+</html>
