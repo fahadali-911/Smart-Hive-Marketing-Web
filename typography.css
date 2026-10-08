@@ -1,0 +1,234 @@
+/* SmartHive canonical typography system
+   Home-page typography is the visual source of truth for every page. */
+
+:root {
+  --type-serif: "Fraunces", Georgia, serif;
+  --type-sans: "Plus Jakarta Sans", Arial, sans-serif;
+  --type-h1: clamp(3rem, 5.4vw, 5.1rem);
+  --type-h2: clamp(2.25rem, 4vw, 3.8rem);
+  --type-h3: 1.45rem;
+  --type-h4: 1.08rem;
+  --type-body: 1rem;
+  --type-lead: clamp(1.05rem, 1.6vw, 1.22rem);
+  --type-label: 0.75rem;
+  --type-button: 0.9rem;
+  --type-heading-color: var(--navy-900, var(--navy, #0c1a24));
+  --type-accent-color: var(--green-accent, var(--green, #2a5d4a));
+  --type-muted-color: var(--text-muted, var(--muted, #536471));
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--type-sans);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--type-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+.heading-serif {
+  font-family: var(--type-serif);
+  color: var(--type-heading-color);
+  text-wrap: balance;
+}
+
+h1,
+h1.heading-serif,
+.methodology-title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-size: var(--type-h1) !important;
+  font-weight: 500 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+}
+
+h2:not(.site-audit-title),
+h2.heading-serif,
+.final-cta-title,
+.sh-case-title {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: var(--type-h2) !important;
+  font-weight: 500 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: var(--type-serif);
+  font-size: var(--type-h3);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+}
+
+.capability h3,
+.difference h3,
+.sh-overview-card h3,
+.sh-compact-title,
+.sh-pattern-title,
+.panel-title,
+.method-rail-title,
+.diagnostic-card-title,
+.diagnostic-transition h3 {
+  font-family: var(--type-serif) !important;
+  font-size: var(--type-h3) !important;
+  font-weight: 500 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-family: var(--type-serif);
+  font-size: var(--type-h4);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.lead,
+.sub-copy,
+.methodology-lead,
+.acquire-lead,
+.convert-lead,
+.book-lead,
+.treat-lead,
+.retain-lead,
+.reactivate-lead,
+.final-cta-desc {
+  margin-top: 0 !important;
+  color: var(--type-muted-color);
+  font-size: var(--type-lead) !important;
+  font-weight: 400;
+  line-height: 1.7 !important;
+}
+
+.eyebrow,
+.acquire-eyebrow,
+.convert-eyebrow,
+.book-eyebrow,
+.treat-eyebrow,
+.retain-eyebrow,
+.reactivate-eyebrow {
+  margin-top: 0;
+  margin-bottom: 18px !important;
+  font-family: var(--type-sans);
+  font-size: var(--type-label) !important;
+  font-weight: 800 !important;
+  line-height: 1.35;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+}
+
+.button,
+.btn,
+.header-cta-btn,
+.drawer-cta-btn,
+.site-audit-submit {
+  font-family: var(--type-sans);
+  font-size: var(--type-button) !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.section-heading,
+.section-header,
+.sh-overview-header,
+.sh-patterns-header,
+.diagnostic-intro {
+  margin-bottom: 46px;
+}
+
+.heading-accent,
+.text-green-accent {
+  color: var(--type-accent-color) !important;
+}
+
+.system .heading-accent,
+.final-cta .heading-accent,
+.final-cta-section .heading-accent,
+.sh-final-cta-section .heading-accent {
+  color: var(--emerald, #43d5a1) !important;
+}
+
+/* Compact interface headings retain their functional scale. */
+.stage h3 {
+  font-family: var(--type-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+}
+
+.site-audit-title {
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --type-h1: clamp(2.65rem, 11vw, 3.6rem);
+    --type-h2: clamp(2.05rem, 9vw, 3rem);
+    --type-h3: 1.32rem;
+    --type-lead: clamp(1rem, 2.7vw, 1.1rem);
+  }
+
+  h1,
+  h1.heading-serif,
+  .methodology-title {
+    line-height: 1.02 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  h2:not(.site-audit-title),
+  h2.heading-serif,
+  .final-cta-title,
+  .sh-case-title {
+    line-height: 1.08 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .section-heading,
+  .section-header,
+  .sh-overview-header,
+  .sh-patterns-header,
+  .diagnostic-intro {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --type-h1: clamp(2.45rem, 10.8vw, 3rem);
+    --type-h2: clamp(1.95rem, 9.4vw, 2.45rem);
+    --type-h3: 1.25rem;
+  }
+
+  h1 br,
+  h2 br {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "smarthive-marketing-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartHive Marketing production website",
+  "scripts": {
+    "dev": "node preview-server.js",
+    "check": "node --check contact.js && node --check audit-modal.js && node --check preview-server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

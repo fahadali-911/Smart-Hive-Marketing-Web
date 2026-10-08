@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">SmartHive mark</title>
+  <desc id="desc">An elegant SmartHive monogram inspired by a flowing skin contour and a botanical petal.</desc>
+  <rect x="5" y="5" width="54" height="54" rx="19" fill="#153b32"/>
+  <rect x="7.25" y="7.25" width="49.5" height="49.5" rx="16.75" fill="none" stroke="#c99a5a" stroke-width="1.5"/>
+  <path d="M42.5 18.5c-3.3-4.2-8.7-6-14-4.8-6.1 1.4-10.1 5.6-9.4 10.1.8 4.9 5.7 6.5 12.5 7.5 7 1 11.5 3.1 12.1 8 .6 5-3.9 9.4-10.6 10.6-5.5 1-11.1-.8-14.1-5.1" fill="none" stroke="#fffaf2" stroke-linecap="round" stroke-width="3.4"/>
+  <path d="M43.1 17.8c5.4-.7 8.6-3.6 9.2-8.4-4.9.2-8.3 2.9-9.2 8.4Z" fill="#d8b274"/>
+  <circle cx="19" cy="44.8" r="2.15" fill="#d8b274"/>
+</svg>

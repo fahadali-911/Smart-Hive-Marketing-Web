@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="The requested SmartHive Marketing page could not be found.">
+  <title>Page Not Found | SmartHive Marketing</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png?v=20261008-3">
+  <link rel="apple-touch-icon" href="assets/smarthive-brand-mark.png?v=20261008-3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="site-shell.css">
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f8f6f1; color: #0c1a24; }
+    .container { width: min(calc(100% - 48px), 1200px); margin-inline: auto; }
+    .error-header { position: relative; z-index: 2; border-bottom: 1px solid rgba(12,26,36,.1); background: rgba(250,249,246,.96); }
+    .error-header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .error-brand { color: #0c1a24; font-family: "Fraunces", Georgia, serif; font-size: 1.45rem; font-weight: 600; text-decoration: none; }
+    .error-brand span { color: #24664e; }
+    .error-nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 32px); }
+    .error-nav a { color: #40515c; font-size: .86rem; font-weight: 700; text-decoration: none; }
+    .error-nav a:hover, .error-nav a:focus-visible { color: #24664e; }
+    .error-main { min-height: calc(100dvh - 82px); display: grid; place-items: center; overflow: hidden; padding: clamp(70px, 10vw, 140px) 0; background: radial-gradient(circle at 80% 20%, rgba(36,102,78,.12), transparent 35%), radial-gradient(circle at 15% 80%, rgba(201,138,44,.11), transparent 30%); }
+    .error-panel { max-width: 760px; text-align: center; }
+    .error-code { margin: 0 0 18px; color: #c98a2c; font-size: .8rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .error-panel h1 { margin: 0; font-family: "Fraunces", Georgia, serif; font-size: clamp(2.65rem, 7vw, 5.6rem); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
+    .error-panel h1 span { display: block; color: #24664e; }
+    .error-copy { max-width: 590px; margin: 26px auto 0; color: #61727d; font-size: clamp(1rem, 1.6vw, 1.14rem); line-height: 1.75; }
+    .error-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
+    .error-button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 24px; border: 1px solid #0c1a24; border-radius: 999px; background: #0c1a24; color: #fff; font-size: .92rem; font-weight: 700; line-height: 1.1; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+    .error-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(8,18,25,.16); }
+    .error-button.secondary { border-color: rgba(12,26,36,.14); background: #fff; color: #0c1a24; }
+    .error-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 28px; margin: 30px 0 0; padding: 0; list-style: none; }
+    .error-links a { color: #24664e; font-size: .88rem; font-weight: 700; text-underline-offset: 4px; }
+    @media (max-width: 700px) {
+      .container { width: min(calc(100% - 32px), 1200px); }
+      .error-header-inner { min-height: 72px; }
+      .error-nav { display: none; }
+      .error-main { min-height: calc(100dvh - 72px); }
+      .error-actions { align-items: stretch; flex-direction: column; }
+      .error-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="error-header">
+    <div class="container error-header-inner">
+      <a class="brand-logo error-brand" href="home.html" aria-label="SmartHive Marketing home">SmartHive <span>Marketing</span></a>
+      <nav class="error-nav" aria-label="Error page navigation">
+        <a href="home.html">Home</a>
+        <a href="grow.html">How We Grow</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="error-main">
+    <div class="container error-panel">
+      <p class="error-code">Error 404</p>
+      <h1>This Page Has <span>Lost Its Path.</span></h1>
+      <p class="error-copy">The page may have moved, or the address may be incomplete. Continue with SmartHive’s growth system, review the case studies, or start a focused conversation.</p>
+      <div class="error-actions">
+        <a class="error-button" href="home.html">Return Home <span aria-hidden="true">→</span></a>
+        <a class="error-button secondary" href="contact.html">Contact SmartHive</a>
+      </div>
+      <ul class="error-links" aria-label="Helpful destinations">
+        <li><a href="grow.html">Explore the growth system</a></li>
+        <li><a href="case-studies.html">Review case studies</a></li>
+        <li><a href="growth leak.html">Find growth leaks</a></li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

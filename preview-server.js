@@ -3,6 +3,13 @@ const fs = require('fs');
 const path = require('path');
 
 const root = __dirname;
+const routes = {
+  '/': 'home.html',
+  '/how-we-grow': 'grow.html',
+  '/growth-leaks': 'growth leak.html',
+  '/case-studies': 'case-studies.html',
+  '/contact': 'contact.html'
+};
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -16,7 +23,7 @@ const types = {
 
 http.createServer((request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-  const requested = pathname === '/' ? 'home.html' : pathname.replace(/^\/+/, '');
+  const requested = routes[pathname] || pathname.replace(/^\/+/, '');
   const filePath = path.resolve(root, requested);
 
   if (!filePath.startsWith(root + path.sep)) {
@@ -26,7 +33,21 @@ http.createServer((request, response) => {
 
   fs.readFile(filePath, (error, content) => {
     if (error) {
-      response.writeHead(error.code === 'ENOENT' ? 404 : 500).end('Not found');
+      if (error.code === 'ENOENT') {
+        fs.readFile(path.join(root, '404.html'), (notFoundError, notFoundPage) => {
+          if (notFoundError) {
+            response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' }).end('Not found');
+            return;
+          }
+          response.writeHead(404, {
+            'Content-Type': 'text/html; charset=utf-8',
+            'Cache-Control': 'no-store'
+          });
+          response.end(notFoundPage);
+        });
+        return;
+      }
+      response.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' }).end('Server error');
       return;
     }
     response.writeHead(200, {
