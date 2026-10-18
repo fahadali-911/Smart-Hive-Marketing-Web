@@ -1,7 +1,7 @@
 // Supabase's publishable key is safe for browser use when table access is protected by RLS.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const SUPABASE_URL = 'https://dldfakymxbrtzbdwcblj.supabase.co';
+const SUPABASE_URL = 'https://dldfakymxbrtzbdwcbli.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_nd31hs9c3Hl6D9Wh-Zn2uQ_IYqTLwbL';
 
 const form = document.getElementById('contact-form');
