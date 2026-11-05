@@ -1,7 +1,27 @@
+/*
+ * Shared CTA routing
+ *
+ * Every “Book a Free Audit” / growth-audit CTA intentionally sends visitors
+ * to the canonical contact form. Keeping one form means every inquiry uses
+ * the same validation, Supabase submission flow, and confirmation state.
+ */
 (() => {
-  const modal = document.getElementById('audit-modal');
-  const form = document.getElementById('site-audit-form');
-  if (!modal || !form || modal.dataset.canonicalReady === 'true') return;
+  const triggers = document.querySelectorAll('.open-audit-modal, .js-open-audit');
+  if (!triggers.length) return;
+
+  const contactUrl = new URL('contact.html', window.location.href);
+  contactUrl.searchParams.set('source', 'growth-audit-cta');
+  contactUrl.hash = 'contact-form';
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      if (window.closeSmartHiveMobileMenu) window.closeSmartHiveMobileMenu();
+      window.location.assign(contactUrl.href);
+    });
+  });
+})();
+/*
 
   modal.dataset.canonicalReady = 'true';
   const dialog = modal.querySelector('.site-audit-dialog');
@@ -97,3 +117,4 @@
     }, 700);
   });
 })();
+*/
