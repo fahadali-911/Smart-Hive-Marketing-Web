@@ -8,7 +8,11 @@ const routes = {
   '/how-we-grow': 'grow.html',
   '/growth-leaks': 'growth leak.html',
   '/case-studies': 'case-studies.html',
-  '/contact': 'contact.html'
+  '/contact': 'contact.html',
+  '/blog': 'blogs/index.html',
+  '/blog/': 'blogs/index.html',
+  '/blogs': 'blogs/index.html',
+  '/blogs/': 'blogs/index.html'
 };
 const types = {
   '.html': 'text/html; charset=utf-8',
@@ -18,11 +22,17 @@ const types = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 http.createServer((request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+  if (pathname === '/blog/') {
+    response.writeHead(308, { Location: '/blog' + new URL(request.url, 'http://localhost').search }).end();
+    return;
+  }
   const requested = routes[pathname] || pathname.replace(/^\/+/, '');
   const filePath = path.resolve(root, requested);
 
@@ -56,4 +66,6 @@ http.createServer((request, response) => {
     });
     response.end(content);
   });
-}).listen(4173, '127.0.0.1');
+}).listen(Number(process.env.PORT) || 4173, '127.0.0.1', () => {
+  console.log(`Local: http://127.0.0.1:${Number(process.env.PORT) || 4173}`);
+});

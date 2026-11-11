@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contactSubmissions/{submissionId} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'name', 'email', 'phone', 'business', 'service', 'message', 'createdAt'
+      ])
+      && request.resource.data.name is string
+      && request.resource.data.name.size() >= 2
+      && request.resource.data.name.size() <= 120
+      && request.resource.data.email is string
+      && request.resource.data.email.size() <= 180
+      && request.resource.data.phone is string
+      && request.resource.data.phone.size() <= 80
+      && request.resource.data.business is string
+      && request.resource.data.business.size() >= 2
+      && request.resource.data.business.size() <= 160
+      && request.resource.data.service is string
+      && request.resource.data.service.size() <= 160
+      && request.resource.data.message is string
+      && request.resource.data.message.size() >= 10
+      && request.resource.data.message.size() <= 3000
+      && request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if false;
+    }
+  }
+}

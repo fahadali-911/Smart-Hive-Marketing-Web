@@ -5,20 +5,22 @@
     { "source": "/grow.html", "destination": "/how-we-grow", "permanent": true },
     { "source": "/growth%20leak.html", "destination": "/growth-leaks", "permanent": true },
     { "source": "/case-studies.html", "destination": "/case-studies", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true }
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/blog.html", "destination": "/blog", "permanent": true }
   ],
   "rewrites": [
     { "source": "/", "destination": "/home.html" },
     { "source": "/how-we-grow", "destination": "/grow.html" },
     { "source": "/growth-leaks", "destination": "/growth%20leak.html" },
     { "source": "/case-studies", "destination": "/case-studies.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/blog", "destination": "/blogs/index.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: https://images.pexels.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://esm.sh; connect-src 'self' https://dldfakymxbrtzbdwcbli.supabase.co https://esm.sh https://www.google-analytics.com https://region1.google-analytics.com; upgrade-insecure-requests" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: https://images.pexels.com https://images.unsplash.com https://dldfakymxbrtzbdwcbli.supabase.co https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://esm.sh; connect-src 'self' https://dldfakymxbrtzbdwcbli.supabase.co https://esm.sh https://www.google-analytics.com https://region1.google-analytics.com; upgrade-insecure-requests" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },

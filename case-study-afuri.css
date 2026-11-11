@@ -1,0 +1,1446 @@
+/* Afuri Aesthetics & Wellness case study.
+   Everything is namespaced under .sh-afuri* and builds on the
+   tokens declared in case-studies.html, typography.css and site-shell.css. */
+
+.sh-case-studies-page {
+  --sh-afuri-gold-text: #85570f;
+  --sh-afuri-line: rgba(12, 26, 36, .12);
+  --sh-afuri-ease: cubic-bezier(.22, 1, .36, 1);
+  --sh-afuri-space: clamp(64px, 7.5vw, 96px);
+}
+
+/* Shared type -------------------------------------------------------------- */
+
+.sh-afuri h2.sh-afuri-h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.95rem, 3.5vw, 3.15rem) !important;
+  line-height: 1.08 !important;
+}
+
+.sh-afuri-lead {
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.35vw, 1.1rem);
+  line-height: 1.7;
+}
+
+.sh-afuri-micro {
+  display: block;
+  color: var(--sh-afuri-gold-text);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sh-afuri-head {
+  max-width: 760px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.sh-afuri-head--center {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.sh-afuri ol,
+.sh-afuri ul,
+.sh-afuri-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Hero card ---------------------------------------------------------------- */
+
+.sh-afuri-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--case-border);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 14px 40px rgba(12, 26, 36, .08);
+  transition: transform 320ms var(--sh-afuri-ease), border-color 320ms ease, box-shadow 320ms ease;
+}
+
+.sh-afuri-card-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e8e3da;
+}
+
+.sh-afuri-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 600ms var(--sh-afuri-ease);
+}
+
+.sh-afuri-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(22px, 2.6vw, 32px);
+}
+
+.sh-afuri-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 14px;
+}
+
+.sh-afuri-card-category {
+  color: var(--text-muted);
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.sh-afuri-card h2.sh-afuri-card-title {
+  margin-bottom: 10px;
+  font-size: clamp(1.6rem, 2.3vw, 2.05rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em !important;
+}
+
+.sh-afuri-card-desc {
+  color: var(--text-muted);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.sh-afuri-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.sh-afuri-caps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+.sh-afuri-caps li {
+  padding: 0 11px;
+  border-left: 1px solid var(--sh-afuri-line);
+  color: var(--navy-900);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.sh-afuri-caps li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.sh-afuri-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green-accent);
+  font-size: .9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sh-afuri-card-cta .arrow {
+  transition: transform 200ms ease;
+}
+
+.sh-afuri-card:hover,
+.sh-afuri-card:focus-visible {
+  border-color: var(--case-border-strong);
+  box-shadow: 0 22px 54px rgba(12, 26, 36, .13);
+  transform: translateY(-2px);
+}
+
+.sh-afuri-card:hover .sh-afuri-card-media img,
+.sh-afuri-card:focus-visible .sh-afuri-card-media img {
+  transform: scale(1.03);
+}
+
+.sh-afuri-card:hover .sh-afuri-card-cta .arrow,
+.sh-afuri-card:focus-visible .sh-afuri-card-cta .arrow {
+  transform: translateX(5px);
+}
+
+/* Context: feature introduction and client strip --------------------------- */
+
+.sh-afuri-intro {
+  padding: var(--sh-afuri-space) 0 clamp(48px, 5vw, 64px);
+  background: #fff;
+}
+
+.sh-afuri-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(40px, 5.5vw, 80px);
+}
+
+.sh-afuri-photo {
+  aspect-ratio: 1 / 1.04;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--case-border);
+  border-radius: 24px;
+  background: #e8e3da;
+  box-shadow: 0 18px 48px rgba(12, 26, 36, .09);
+}
+
+.sh-afuri-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% center;
+}
+
+.sh-afuri-indicators {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(24px, 3vw, 32px) !important;
+  padding-top: 20px !important;
+  border-top: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-indicators {
+  position: relative;
+}
+
+.sh-afuri-indicators li {
+  position: relative;
+  padding: 0 14px;
+}
+
+/* Vertical separators are drawn with a pseudo-element so they can reveal by scaleY. */
+.sh-afuri-indicators li + li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--sh-afuri-line);
+  transform-origin: top;
+}
+
+.sh-afuri-indicators li:first-child {
+  padding-left: 0;
+}
+
+.sh-afuri-indicators strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--navy-900);
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.3rem);
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+}
+
+.sh-afuri-indicators span {
+  display: block;
+  color: var(--text-muted);
+  font-size: .8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.sh-afuri-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: clamp(40px, 5vw, 60px) 0 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--sh-afuri-line);
+  border-bottom: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-strip > div {
+  min-width: 0;
+  padding: 2px 20px;
+  border-left: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-strip > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.sh-afuri-strip dt {
+  margin-bottom: 4px;
+  color: var(--sh-afuri-gold-text);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sh-afuri-strip dd {
+  margin: 0;
+  color: var(--navy-900);
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Challenge: diagnostic pathway -------------------------------------------- */
+
+.sh-afuri-challenge {
+  padding: 0 0 var(--sh-afuri-space);
+  background: #fff;
+}
+
+.sh-afuri-challenge-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  align-items: start;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.sh-afuri-diag {
+  display: grid;
+  gap: 22px;
+}
+
+.sh-afuri-diag li {
+  --step: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
+  margin-left: calc(var(--step) * 52px);
+}
+
+.sh-afuri-diag li:nth-child(2) { --step: 1; }
+.sh-afuri-diag li:nth-child(3) { --step: 2; }
+.sh-afuri-diag li:nth-child(4) { --step: 3; }
+
+.sh-afuri-diag-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sh-afuri-line);
+  border-radius: 50%;
+  background: var(--bg-cream);
+  color: var(--navy-900);
+  font-size: .95rem;
+}
+
+.sh-afuri-diag li:last-child .sh-afuri-diag-node {
+  border-color: rgba(201, 138, 44, .55);
+  background: var(--gold-soft-bg);
+  color: var(--sh-afuri-gold-text);
+}
+
+/* Elbow connector from this node down into the next, stepped-in node. */
+.sh-afuri-diag-link {
+  position: absolute;
+  top: 40px;
+  bottom: -44px;
+  left: 22px;
+  width: 30px;
+  border-bottom: 1px solid var(--gold-accent);
+  border-left: 1px solid var(--gold-accent);
+  border-bottom-left-radius: 14px;
+  opacity: .6;
+}
+
+.sh-afuri-diag-copy h3 {
+  margin: 4px 0 6px;
+  font-size: 1.22rem;
+}
+
+.sh-afuri-diag-copy p {
+  color: var(--text-muted);
+  font-size: .925rem;
+  line-height: 1.6;
+}
+
+/* Connected client journey ------------------------------------------------- */
+
+.sh-afuri-journey {
+  padding: var(--sh-afuri-space) 0;
+  background: var(--bg-cream-tint);
+}
+
+.sh-afuri-map {
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--sh-afuri-line);
+  border-radius: 24px;
+  background: var(--bg-cream);
+}
+
+.sh-afuri-map-label {
+  margin-bottom: 26px;
+}
+
+.sh-afuri-tiers {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin-bottom: 22px;
+}
+
+.sh-afuri-tiers span {
+  margin: 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentColor;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.sh-afuri-tier-client { grid-column: span 4; color: var(--green-accent); }
+.sh-afuri-tier-system { grid-column: span 2; color: var(--navy-900); }
+.sh-afuri-tier-return { grid-column: span 1; color: var(--green-accent); }
+
+.sh-afuri-path-wrap {
+  position: relative;
+}
+
+.sh-afuri-rail,
+.sh-afuri-rail-final {
+  position: absolute;
+  top: 25px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.sh-afuri-rail {
+  right: calc(100% / 14);
+  left: calc(100% / 14);
+  background: rgba(42, 93, 74, .38);
+  transform-origin: left center;
+}
+
+.sh-afuri-rail-final {
+  left: calc(100% * 4.5 / 7);
+  width: calc(100% / 7);
+  background: var(--navy-900);
+}
+
+.sh-afuri-path {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.sh-afuri-stage {
+  position: relative;
+  min-width: 0;
+  padding: 0 9px;
+  text-align: center;
+}
+
+.sh-afuri-stage-tier {
+  display: none;
+}
+
+.sh-afuri-stage-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  border: 1.5px solid var(--green-accent);
+  border-radius: 50%;
+  background: var(--green-soft-bg);
+  box-shadow: 0 0 0 5px rgba(42, 93, 74, .08);
+  color: var(--green-accent);
+  font-size: 1.02rem;
+}
+
+.sh-afuri-stage--action .sh-afuri-stage-node {
+  border-color: var(--gold-accent);
+  background: var(--gold-soft-bg);
+  box-shadow: 0 0 0 5px rgba(201, 138, 44, .13);
+  color: var(--sh-afuri-gold-text);
+}
+
+.sh-afuri-stage--system .sh-afuri-stage-node {
+  border-color: var(--navy-900);
+  background: var(--navy-900);
+  box-shadow: 0 0 0 5px rgba(12, 26, 36, .09);
+  color: #fff;
+}
+
+.sh-afuri-stage--return .sh-afuri-stage-node {
+  background: var(--green-accent);
+  color: #fff;
+}
+
+.sh-afuri-stage h3 {
+  margin-bottom: 6px;
+  color: var(--navy-900);
+  font-family: var(--font-sans);
+  font-size: .8125rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.sh-afuri-stage p {
+  color: var(--text-muted);
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+/* What SmartHive built: four connected layers ------------------------------- */
+
+.sh-afuri-system {
+  padding: var(--sh-afuri-space) 0;
+  background: var(--bg-cream);
+}
+
+.sh-afuri-layer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(20px, 3vw, 40px);
+  padding: 26px;
+  border-bottom: 1px solid transparent;
+  border-radius: 16px;
+}
+
+.sh-afuri-layer:not(:last-child)::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--sh-afuri-line);
+  content: "";
+}
+
+.sh-afuri-layer:last-child {
+  border-bottom: 0;
+}
+
+/* Connector from this layer's node down to the next layer's node. */
+.sh-afuri-layer:not(:last-child)::before {
+  position: absolute;
+  z-index: 1;
+  top: 70px;
+  bottom: -26px;
+  left: 48px;
+  width: 1px;
+  background: rgba(42, 93, 74, .4);
+  content: "";
+}
+
+.sh-afuri-layer-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(42, 93, 74, .4);
+  border-radius: 50%;
+  background: var(--bg-cream);
+  color: var(--green-accent);
+  font-size: .8125rem;
+  font-weight: 800;
+}
+
+.sh-afuri-layer-title h3 {
+  margin: 5px 0 0;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+.sh-afuri-layer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 7px 22px;
+  padding-top: 4px !important;
+}
+
+.sh-afuri-layer-list li {
+  position: relative;
+  padding-left: 15px;
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.sh-afuri-layer-list li::before {
+  position: absolute;
+  top: .58em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green-accent);
+  content: "";
+}
+
+/* Before and after ---------------------------------------------------------- */
+
+.sh-afuri-transform {
+  padding: var(--sh-afuri-space) 0;
+  background: #fff;
+}
+
+.sh-afuri-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1.1fr);
+  align-items: stretch;
+}
+
+.sh-afuri-side {
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.sh-afuri-side h3 {
+  margin-bottom: 18px;
+  font-family: var(--font-sans);
+  font-size: .8125rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.sh-afuri-side--before h3 { color: var(--text-muted); }
+.sh-afuri-side--after h3 { color: var(--green-accent); }
+
+.sh-afuri-side li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--sh-afuri-line);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+.sh-afuri-side--before li { color: var(--text-muted); }
+
+.sh-afuri-side li i {
+  margin-top: .32em;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.sh-afuri-side--before li i { color: var(--text-subtle); }
+
+.sh-afuri-side--after {
+  border: 1px solid rgba(42, 93, 74, .3);
+  border-radius: 22px;
+  background: var(--green-soft-bg);
+}
+
+.sh-afuri-side--after li {
+  border-top-color: rgba(42, 93, 74, .18);
+  color: var(--navy-900);
+  font-weight: 600;
+}
+
+.sh-afuri-side--after li i { color: var(--green-accent); }
+
+.sh-afuri-shift {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sh-afuri-shift::before {
+  position: absolute;
+  top: 34px;
+  bottom: 34px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(42, 93, 74, .45) 22%, rgba(42, 93, 74, .45) 78%, transparent);
+  content: "";
+}
+
+.sh-afuri-shift i {
+  position: relative;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green-accent);
+  color: #fff;
+  font-size: .9rem;
+}
+
+.sh-afuri-implemented {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.sh-afuri-implemented-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 14px !important;
+  border-top: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-implemented-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--sh-afuri-line);
+  color: var(--navy-900);
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.sh-afuri-implemented-list i {
+  color: var(--green-accent);
+  font-size: .8rem;
+}
+
+/* Outcome and takeaways ----------------------------------------------------- */
+
+.sh-afuri-close {
+  padding: var(--sh-afuri-space) 0;
+  background: var(--bg-cream-tint);
+}
+
+.sh-afuri-outcome {
+  display: grid;
+  grid-template-columns: minmax(170px, .28fr) minmax(0, 1fr);
+  gap: clamp(16px, 4vw, 56px);
+}
+
+.sh-afuri-outcome .sh-afuri-micro {
+  padding-top: 10px;
+  border-top: 2px solid var(--green-accent);
+}
+
+.sh-afuri-statement {
+  color: var(--navy-900);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.7vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: -.02em;
+  line-height: 1.26;
+}
+
+.sh-afuri-takeaways {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(36px, 4.5vw, 56px) !important;
+  padding-top: 26px !important;
+  border-top: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-takeaways li {
+  padding: 0 22px;
+  border-left: 1px solid var(--sh-afuri-line);
+}
+
+.sh-afuri-takeaways li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.sh-afuri-takeaways h3 {
+  margin-bottom: 8px;
+  color: var(--green-accent);
+  font-family: var(--font-sans);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sh-afuri-takeaways p {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+/* Case-study CTA ------------------------------------------------------------ */
+
+.sh-afuri-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: end;
+  gap: clamp(28px, 5vw, 72px);
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(32px, 5vw, 64px);
+  border-radius: 28px;
+  background: var(--navy-900);
+}
+
+.sh-afuri-cta .eyebrow {
+  color: var(--gold-light);
+}
+
+.sh-afuri-cta h2.sh-afuri-h2 {
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.sh-afuri-cta p {
+  margin-bottom: 24px;
+  color: #b8c7cf;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.sh-afuri-cta .sh-afuri-cta-btn,
+.sh-afuri-cta .sh-afuri-cta-btn:hover {
+  background: #fff;
+  color: var(--navy-900);
+}
+
+.sh-afuri-cta .sh-afuri-cta-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Motion: hidden states exist only once the script has confirmed it can run,
+   and it never runs under prefers-reduced-motion. */
+
+.sh-afuri-motion [data-sh-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--sh-afuri-ease), transform 600ms var(--sh-afuri-ease);
+}
+
+.sh-afuri-motion [data-sh-reveal="image"] {
+  transform: scale(.985);
+}
+
+.sh-afuri-motion [data-sh-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.sh-afuri-motion [data-sh-journey] .sh-afuri-rail {
+  transform: scaleX(0);
+  transition: transform 420ms var(--sh-afuri-ease);
+}
+
+.sh-afuri-motion [data-sh-journey] .sh-afuri-rail-final,
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage--link::after {
+  opacity: 0;
+  transition: opacity 140ms ease 560ms;
+}
+
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 260ms ease, transform 260ms var(--sh-afuri-ease);
+}
+
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(1) { transition-delay: 60ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(2) { transition-delay: 105ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(3) { transition-delay: 150ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(4) { transition-delay: 195ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(5) { transition-delay: 240ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(6) { transition-delay: 285ms; }
+.sh-afuri-motion [data-sh-journey] .sh-afuri-stage:nth-child(7) { transition-delay: 330ms; }
+
+.sh-afuri-motion [data-sh-journey].is-in .sh-afuri-rail { transform: none; }
+.sh-afuri-motion [data-sh-journey].is-in .sh-afuri-rail-final,
+.sh-afuri-motion [data-sh-journey].is-in .sh-afuri-stage--link::after { opacity: 1; }
+.sh-afuri-motion [data-sh-journey].is-in .sh-afuri-stage { opacity: 1; transform: none; }
+
+/* Responsive --------------------------------------------------------------- */
+
+@media (max-width: 1040px) {
+
+  .sh-afuri-takeaways {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 26px;
+  }
+
+  .sh-afuri-takeaways li:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* Below this width the journey is a vertical story, not a shrunken diagram. */
+@media (max-width: 980px) {
+  .sh-afuri-tiers,
+  .sh-afuri-rail-final {
+    display: none;
+  }
+
+  .sh-afuri-stage-tier {
+    display: none;
+    margin-bottom: 4px;
+    color: var(--green-accent);
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .sh-afuri-stage--tier-start .sh-afuri-stage-tier {
+    display: block;
+  }
+
+  .sh-afuri-stage--system .sh-afuri-stage-tier {
+    color: var(--navy-900);
+  }
+
+  .sh-afuri-rail {
+    top: 26px;
+    right: auto;
+    bottom: 40px;
+    left: 25px;
+    width: 2px;
+    height: auto;
+    transform-origin: center top;
+  }
+
+  .sh-afuri-motion [data-sh-journey] .sh-afuri-rail {
+    transform: scaleY(0);
+  }
+
+  .sh-afuri-path {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  .sh-afuri-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 18px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .sh-afuri-stage-node {
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+
+  .sh-afuri-stage-tier,
+  .sh-afuri-stage h3,
+  .sh-afuri-stage p {
+    grid-column: 2;
+  }
+
+  .sh-afuri-stage h3 {
+    margin-top: 4px;
+    margin-bottom: 3px;
+    font-size: .875rem;
+  }
+
+  .sh-afuri-stage p {
+    font-size: .9rem;
+  }
+
+  /* The navy CRM-to-follow-up link, drawn last. */
+  .sh-afuri-stage--link::after {
+    position: absolute;
+    top: 52px;
+    bottom: -20px;
+    left: 25px;
+    width: 2px;
+    background: var(--navy-900);
+    content: "";
+  }
+}
+
+@media (max-width: 900px) {
+  .sh-afuri-intro-grid,
+  .sh-afuri-challenge-grid,
+  .sh-afuri-cta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sh-afuri-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .sh-afuri-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 0;
+  }
+
+  .sh-afuri-strip > div:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .sh-afuri-strip > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .sh-afuri-diag li {
+    margin-left: calc(var(--step) * 24px);
+  }
+
+  .sh-afuri-diag-link {
+    width: 24px;
+    border-bottom: 1px solid var(--gold-accent);
+    border-bottom-left-radius: 10px;
+  }
+
+  .sh-afuri-layer {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .sh-afuri-layer-list {
+    grid-column: 2;
+  }
+
+  .sh-afuri-compare {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sh-afuri-shift {
+    min-height: 68px;
+  }
+
+  .sh-afuri-shift::before {
+    top: 0;
+    right: auto;
+    bottom: 0;
+  }
+
+  .sh-afuri-shift i {
+    transform: rotate(90deg);
+  }
+
+  .sh-afuri-implemented-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sh-afuri-outcome {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sh-afuri-outcome .sh-afuri-micro {
+    justify-self: start;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .sh-afuri-card-foot {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sh-afuri-photo {
+    aspect-ratio: 4 / 3.4;
+  }
+
+  .sh-afuri-indicators {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 18px;
+  }
+
+  .sh-afuri-indicators li:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .sh-afuri-indicators li:nth-child(3)::before {
+    display: none;
+  }
+
+  .sh-afuri-strip > div {
+    padding: 0 12px;
+  }
+
+  /* One-column reading order: no stepped indent competing with the text. */
+  .sh-afuri-diag li {
+    margin-left: 0;
+    gap: 14px;
+  }
+
+  .sh-afuri-diag-link {
+    bottom: -22px;
+    width: 1px;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .sh-afuri-layer {
+    gap: 14px;
+    padding: 20px 12px;
+  }
+
+  .sh-afuri-layer:not(:last-child)::before {
+    top: 64px;
+    bottom: -20px;
+    left: 34px;
+  }
+
+  .sh-afuri-layer-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 12px;
+  }
+
+  .sh-afuri-implemented-list,
+  .sh-afuri-takeaways {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sh-afuri-takeaways {
+    row-gap: 20px;
+  }
+
+  .sh-afuri-takeaways li {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .sh-afuri-cta {
+    border-radius: 22px;
+  }
+
+  .sh-afuri-cta .sh-afuri-cta-btn {
+    width: 100%;
+  }
+}
+
+/* The hero stacks at this range, so the card reads as a horizontal feature. */
+@media (min-width: 641px) and (max-width: 1040px) {
+  .sh-afuri-card {
+    flex-direction: row;
+  }
+
+  .sh-afuri-card-media {
+    flex: 0 0 42%;
+    aspect-ratio: auto;
+  }
+
+  .sh-afuri-card-body {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .sh-afuri-card-media img {
+    object-position: 62% center;
+  }
+}
+
+/* The logo tag and first nav item collide just above the mobile-nav breakpoint. */
+@media (min-width: 993px) and (max-width: 1100px) {
+  .sh-case-studies-page .brand-tag {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-afuri-card,
+  .sh-afuri-card-media img,
+  .sh-afuri-card-cta .arrow {
+    transition: none;
+  }
+
+  .sh-afuri-card:hover,
+  .sh-afuri-card:focus-visible,
+  .sh-afuri-card:hover .sh-afuri-card-media img,
+  .sh-afuri-card:focus-visible .sh-afuri-card-media img {
+    transform: none;
+  }
+}
+
+/* Pointer interactions -------------------------------------------------------
+   One language throughout: rest, hover, subtle emphasis. The items are
+   informational, so there is no pointer cursor, role or tab stop. Effects are
+   keyed to .sh-afuri-hover-on, which case-study-afuri.js sets from real mouse or
+   pen movement, because touchscreen laptops misreport their input in media queries. */
+
+.sh-case-studies-page {
+  --sh-afuri-hover: 280ms ease;
+  --sh-afuri-green-deep: #1d4535;
+  --sh-afuri-gold-deep: #6b4509;
+}
+
+.sh-afuri-diag-node,
+.sh-afuri-stage-node,
+.sh-afuri-layer-node {
+  transition: transform var(--sh-afuri-hover), border-color var(--sh-afuri-hover), box-shadow var(--sh-afuri-hover), background-color var(--sh-afuri-hover), color var(--sh-afuri-hover);
+}
+
+.sh-afuri-diag-copy,
+.sh-afuri-layer-title,
+.sh-afuri-layer-list {
+  transition: transform var(--sh-afuri-hover);
+}
+
+.sh-afuri-diag .sh-afuri-micro,
+.sh-afuri-diag-copy h3,
+.sh-afuri-diag-copy p,
+.sh-afuri-stage h3,
+.sh-afuri-stage p,
+.sh-afuri-layer .sh-afuri-micro,
+.sh-afuri-layer-title h3 {
+  transition: color var(--sh-afuri-hover);
+}
+
+.sh-afuri-diag-link,
+.sh-afuri-layer::after {
+  transition: opacity var(--sh-afuri-hover);
+}
+
+.sh-afuri-layer {
+  transition: background-color var(--sh-afuri-hover), box-shadow var(--sh-afuri-hover);
+}
+
+.sh-afuri-layer::before {
+  transition: background-color var(--sh-afuri-hover);
+}
+
+.sh-afuri-layer-list li {
+  transition: color var(--sh-afuri-hover), transform var(--sh-afuri-hover);
+}
+
+.sh-afuri-layer-list li::before {
+  transition: background-color var(--sh-afuri-hover), opacity var(--sh-afuri-hover);
+  opacity: .72;
+}
+
+/* Each stage owns the short segment leading to the next stage. Hidden at rest,
+   so the approved journey line is unchanged until a stage is hovered. */
+.sh-afuri-stage {
+  --sh-afuri-link: var(--green-accent);
+}
+
+.sh-afuri-stage--action { --sh-afuri-link: var(--gold-accent); }
+.sh-afuri-stage--system { --sh-afuri-link: var(--navy-900); }
+
+.sh-afuri-stage:not(:last-child)::before {
+  position: absolute;
+  top: 24.5px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--sh-afuri-link);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--sh-afuri-hover);
+}
+
+@media (max-width: 980px) {
+  .sh-afuri-stage:not(:last-child)::before {
+    top: 52px;
+    bottom: -20px;
+    left: 24.5px;
+    width: 3px;
+    height: auto;
+  }
+}
+
+/* Challenge pathway */
+.sh-afuri-hover-on .sh-afuri-diag li:hover .sh-afuri-diag-node {
+  border-color: var(--green-accent);
+  background: var(--green-soft-bg);
+  box-shadow: 0 6px 16px rgba(12, 26, 36, .10);
+  color: var(--green-accent);
+}
+
+.sh-afuri-hover-on .sh-afuri-diag li:last-child:hover .sh-afuri-diag-node {
+  border-color: var(--gold-accent);
+  background: var(--gold-soft-bg);
+  color: var(--sh-afuri-gold-text);
+}
+
+.sh-afuri-hover-on .sh-afuri-diag li:hover .sh-afuri-micro { color: var(--sh-afuri-gold-deep); }
+.sh-afuri-hover-on .sh-afuri-diag li:hover h3 { color: var(--green-accent); }
+.sh-afuri-hover-on .sh-afuri-diag li:hover p { color: var(--text-dark); }
+.sh-afuri-hover-on .sh-afuri-diag li:hover .sh-afuri-diag-link { opacity: .95; }
+
+/* Connected journey */
+.sh-afuri-hover-on .sh-afuri-stage:hover .sh-afuri-stage-node {
+  border-color: var(--sh-afuri-green-deep);
+  box-shadow: 0 0 0 7px rgba(42, 93, 74, .12), 0 8px 18px rgba(12, 26, 36, .12);
+  color: var(--sh-afuri-green-deep);
+}
+
+.sh-afuri-hover-on .sh-afuri-stage--action:hover .sh-afuri-stage-node {
+  border-color: var(--sh-afuri-gold-deep);
+  box-shadow: 0 0 0 7px rgba(201, 138, 44, .16), 0 8px 18px rgba(12, 26, 36, .12);
+  color: var(--sh-afuri-gold-deep);
+}
+
+.sh-afuri-hover-on .sh-afuri-stage--system:hover .sh-afuri-stage-node {
+  border-color: var(--navy-950);
+  background: var(--navy-950);
+  box-shadow: 0 0 0 7px rgba(12, 26, 36, .11), 0 8px 18px rgba(12, 26, 36, .16);
+  color: #fff;
+}
+
+.sh-afuri-hover-on .sh-afuri-stage--return:hover .sh-afuri-stage-node {
+  background: var(--sh-afuri-green-deep);
+  color: #fff;
+}
+
+.sh-afuri-hover-on .sh-afuri-stage:hover h3 { color: var(--green-accent); }
+.sh-afuri-hover-on .sh-afuri-stage--action:hover h3 { color: var(--sh-afuri-gold-text); }
+.sh-afuri-hover-on .sh-afuri-stage--system:hover h3 { color: var(--navy-950); }
+.sh-afuri-hover-on .sh-afuri-stage:hover p { color: var(--text-dark); }
+.sh-afuri-hover-on .sh-afuri-stage:not(:last-child):hover::before { opacity: 1; }
+
+/* System layers */
+.sh-afuri-hover-on .sh-afuri-layer:hover {
+  background-color: rgba(234, 244, 238, .8);
+  box-shadow: inset 0 0 0 1px rgba(42, 93, 74, .18);
+}
+
+.sh-afuri-hover-on .sh-afuri-layer:hover::after,
+.sh-afuri-hover-on .sh-afuri-layer:has(+ .sh-afuri-layer:hover)::after {
+  opacity: 0;
+}
+
+.sh-afuri-hover-on .sh-afuri-layer:not(:last-child):hover::before,
+.sh-afuri-hover-on .sh-afuri-layer:has(+ .sh-afuri-layer:hover)::before {
+  background: rgba(42, 93, 74, .85);
+}
+
+.sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-node {
+  border-color: var(--green-accent);
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(12, 26, 36, .10);
+  color: var(--sh-afuri-green-deep);
+}
+
+.sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-micro { color: var(--sh-afuri-gold-deep); }
+.sh-afuri-hover-on .sh-afuri-layer:hover h3 { color: var(--green-accent); }
+.sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-list li { color: var(--text-dark); }
+.sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-list li::before { opacity: 1; }
+
+.sh-afuri-hover-on .sh-afuri-layer .sh-afuri-layer-list li:hover { color: var(--navy-900); }
+
+.sh-afuri-hover-on .sh-afuri-layer .sh-afuri-layer-list li:hover::before {
+  background: var(--gold-accent);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sh-afuri-hover-on .sh-afuri-diag li:hover .sh-afuri-diag-node { transform: translateY(-2px) scale(1.04); }
+  .sh-afuri-hover-on .sh-afuri-diag li:hover .sh-afuri-diag-copy { transform: translateX(3px); }
+  .sh-afuri-hover-on .sh-afuri-stage:hover .sh-afuri-stage-node { transform: translateY(-3px) scale(1.05); }
+  .sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-node { transform: scale(1.04); }
+
+  .sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-title,
+  .sh-afuri-hover-on .sh-afuri-layer:hover .sh-afuri-layer-list {
+    transform: translateX(4px);
+  }
+
+  .sh-afuri-hover-on .sh-afuri-layer .sh-afuri-layer-list li:hover { transform: translateX(2px); }
+}
+
+/* ==========================================================================
+   STATISTICS STRIP — restrained entrance (added by case-study-afuri.js)
+   Runs once. Without the .sh-afuri-stats-motion class the strip is static.
+   ========================================================================== */
+.sh-afuri-stats-motion .sh-afuri-indicators {
+  border-top-color: transparent;
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--sh-afuri-line);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 800ms cubic-bezier(.2,.8,.2,1);
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators.is-in::before {
+  transform: scaleX(1);
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators li {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease-out, transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators li:nth-child(2) { transition-delay: 100ms; }
+.sh-afuri-stats-motion .sh-afuri-indicators li:nth-child(3) { transition-delay: 200ms; }
+.sh-afuri-stats-motion .sh-afuri-indicators li:nth-child(4) { transition-delay: 300ms; }
+
+.sh-afuri-stats-motion .sh-afuri-indicators.is-in li {
+  opacity: 1;
+  transform: none;
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators li + li::before {
+  transform: scaleY(0);
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1) 250ms;
+}
+
+.sh-afuri-stats-motion .sh-afuri-indicators.is-in li + li::before {
+  transform: scaleY(1);
+}
+
+/* Numbers keep their final width while counting, so neighbours never move. */
+.sh-afuri-indicators strong {
+  white-space: nowrap;
+}
+
+/* Desktop hover: a subtle lift and tint, editorial rather than card-like. */
+@media (prefers-reduced-motion: no-preference) {
+  .sh-afuri-hover-on .sh-afuri-indicators li {
+    transition: background-color 260ms ease;
+    border-radius: 6px;
+  }
+  .sh-afuri-hover-on .sh-afuri-indicators li:hover {
+    background-color: color-mix(in srgb, var(--navy-900) 3%, transparent);
+  }
+  .sh-afuri-hover-on .sh-afuri-indicators strong {
+    transition: transform 260ms ease, color 260ms ease;
+  }
+  .sh-afuri-hover-on .sh-afuri-indicators li:hover strong {
+    transform: translateY(-3px);
+    color: var(--green-accent);
+  }
+  .sh-afuri-hover-on .sh-afuri-indicators li:hover span {
+    color: var(--navy-900);
+  }
+  .sh-afuri-hover-on .sh-afuri-indicators span {
+    transition: color 260ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-afuri-stats-motion .sh-afuri-indicators::before,
+  .sh-afuri-stats-motion .sh-afuri-indicators li,
+  .sh-afuri-stats-motion .sh-afuri-indicators li + li::before {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .sh-afuri-stats-motion .sh-afuri-indicators { border-top-color: var(--sh-afuri-line); }
+}

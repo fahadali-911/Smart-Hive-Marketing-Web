@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /blogs/blog-preview.js
 
-# Add the absolute sitemap URL after the production domain is confirmed.
+Sitemap: https://smarthivemarketing.com/sitemap.xml
