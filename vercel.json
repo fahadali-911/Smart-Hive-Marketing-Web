@@ -5,6 +5,7 @@
     { "source": "/grow.html", "destination": "/how-we-grow", "permanent": true },
     { "source": "/growth%20leak.html", "destination": "/growth-leaks", "permanent": true },
     { "source": "/case-studies.html", "destination": "/case-studies", "permanent": true },
+    { "source": "/case-studies/afuri.html", "destination": "/case-studies/afuri", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/blog.html", "destination": "/blog", "permanent": true }
   ],
@@ -13,6 +14,7 @@
     { "source": "/how-we-grow", "destination": "/grow.html" },
     { "source": "/growth-leaks", "destination": "/growth%20leak.html" },
     { "source": "/case-studies", "destination": "/case-studies.html" },
+    { "source": "/case-studies/afuri", "destination": "/case-studies/afuri.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/blog", "destination": "/blogs/index.html" }
   ],

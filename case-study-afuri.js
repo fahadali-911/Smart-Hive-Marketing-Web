@@ -69,3 +69,48 @@
 
   observer.observe(strip);
 })();
+
+/* Featured image carousel: cross-fades, auto-advances every 3.5s, pauses on hover,
+   focus and when off-screen, and never autoplays under reduced motion. */
+(() => {
+  const root = document.querySelector('[data-carousel]');
+  if (!root) return;
+  const slides = [...root.querySelectorAll('.sh-carousel-slide')];
+  const captions = ['Brand experience', 'Treatment experience', 'Patient relationship'];
+  const label = root.querySelector('[data-carousel-index]');
+  const caption = root.querySelector('[data-carousel-caption]');
+  const DELAY = 3500;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index = 0, timer = null, hovering = false, focused = false, visible = true;
+
+  const show = (i) => {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((slide, n) => {
+      const on = n === index;
+      slide.classList.toggle('is-active', on);
+      slide.setAttribute('aria-hidden', String(!on));
+    });
+    label.textContent = String(index + 1).padStart(2, '0');
+    caption.textContent = captions[index];
+  };
+  const stop = () => { clearInterval(timer); timer = null; };
+  const start = () => {
+    if (reduced || timer || hovering || focused || !visible) return;
+    timer = setInterval(() => show(index + 1), DELAY);
+  };
+  const restart = () => { stop(); start(); };
+
+  root.addEventListener('mouseenter', () => { hovering = true; stop(); });
+  root.addEventListener('mouseleave', () => { hovering = false; start(); });
+  root.addEventListener('focusin', () => { focused = true; stop(); });
+  root.addEventListener('focusout', (e) => { if (!root.contains(e.relatedTarget)) { focused = false; start(); } });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      visible ? start() : stop();
+    }, { threshold: 0.35 }).observe(root);
+  }
+  show(0);
+  start();
+})();

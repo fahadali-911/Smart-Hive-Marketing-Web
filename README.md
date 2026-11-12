@@ -9,7 +9,8 @@ A responsive marketing website for **SmartHive Marketing**, focused on helping m
 | `home.html` | Main landing page and overview of SmartHive's services |
 | `grow.html` | Explains the patient growth system and process |
 | `growth leak.html` | Growth-leak diagnostic and patient-journey content |
-| `case-studies.html` | Case studies and growth results |
+| `case-studies.html` | Case Studies hub (`/case-studies`): hero and featured case-study cards |
+| `case-studies/afuri.html` | Afuri Aesthetics & Wellness case study (`/case-studies/afuri`) |
 | `blogs/index.html` | Blog index and article template, with production empty state and optional local draft preview |
 | `blogs/blog.css`, `blogs/blog.js`, `blogs/blog-content.js` | Blog styles, shared shell behaviour and the content layer |
 | `blogs/blog-preview.js` | Local draft preview only; exclude from launch |
@@ -24,6 +25,9 @@ A responsive marketing website for **SmartHive Marketing**, focused on helping m
 |-- grow.html
 |-- growth leak.html
 |-- case-studies.html
+|-- case-studies/
+|   |-- afuri.html
+|-- case-studies.css
 |-- blogs/
 |   |-- index.html
 |   |-- blog.css
@@ -120,6 +124,31 @@ The pages load Google Fonts and Font Awesome from public CDNs. An internet conne
 ## Repository
 
 [github.com/fahadali-911/Smart-Hive-Marketing-Web](https://github.com/fahadali-911/Smart-Hive-Marketing-Web)
+
+## Case Studies
+
+Case Studies follows the same structure as the Blog: one hub page plus one page
+per study, each with its own URL.
+
+| URL | File | Purpose |
+| --- | --- | --- |
+| `/case-studies` | `case-studies.html` | Discovery: hero and one card per study |
+| `/case-studies/afuri` | `case-studies/afuri.html` | The full Afuri case study |
+
+Shared files, used by the hub and every study page:
+
+- `case-studies.css`: page styles (previously an inline `<style>` block on the hub)
+- `case-studies-polish.css` and `case-study-afuri.css`: card, section, carousel and animation styles
+- `case-study-afuri.js`: hover mode, scroll reveals, statistics count-up and the image carousel. Each block exits quietly when its elements are not on the page.
+
+### Adding a case study
+
+1. Copy `case-studies/afuri.html` to `case-studies/<slug>.html` and replace the article content. Keep the breadcrumb and back link, and keep the title as the page's only `<h1>`.
+2. Update the page's `<title>`, description, canonical URL, Open Graph tags and JSON-LD.
+3. Add a card for it on `case-studies.html` linking to `/case-studies/<slug>`.
+4. Add the clean URL to `vercel.json` (a redirect from `.html` plus a rewrite to the file), `preview-server.js` and `sitemap.xml`.
+
+Links inside study pages are root-absolute (`/contact`, `/assets/...`) so they work from the nested folder and when the page is opened directly.
 
 ## Blog
 

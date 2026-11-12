@@ -9,7 +9,7 @@
   const triggers = document.querySelectorAll('.open-audit-modal, .js-open-audit');
   if (!triggers.length) return;
 
-  const contactUrl = new URL('contact.html', window.location.href);
+  const contactUrl = new URL('/contact', window.location.href);
   contactUrl.searchParams.set('source', 'growth-audit-cta');
   contactUrl.hash = 'contact-form';
 

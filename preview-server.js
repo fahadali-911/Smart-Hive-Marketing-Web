@@ -8,6 +8,7 @@ const routes = {
   '/how-we-grow': 'grow.html',
   '/growth-leaks': 'growth leak.html',
   '/case-studies': 'case-studies.html',
+  '/case-studies/afuri': 'case-studies/afuri.html',
   '/contact': 'contact.html',
   '/blog': 'blogs/index.html',
   '/blog/': 'blogs/index.html',
