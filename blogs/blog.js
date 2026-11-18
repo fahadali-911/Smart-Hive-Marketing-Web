@@ -84,14 +84,14 @@
     grid.hidden = false;
     document.getElementById('blog-empty').hidden = true;
     const filters = document.getElementById('blog-filters');
-    filters.hidden = false;
+    if (filters) filters.hidden = false;
     const count = document.getElementById('blog-result-count');
     count.hidden = false;
     const isPreview = root.dataset.preview === 'true';
     const setCount = amount => { count.textContent = `${String(amount).padStart(2, '0')} ${isPreview ? 'draft previews' : amount === 1 ? 'insight' : 'insights'}`; };
     setCount(articles.length);
     let timer;
-    filters.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+    if (filters) filters.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
       if (button.getAttribute('aria-pressed') === 'true') return;
       clearTimeout(timer);
       filters.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));

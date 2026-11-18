@@ -8,6 +8,7 @@
 
 /* Hero: a controlled header column above a wider image. */
 .article-page .article-hero { max-width: 880px; margin: 0 auto; }
+.article-page .blog-crumbs { max-width: 880px; }
 .article-page .article-hero h1 {
   max-width: 17ch;
   margin-bottom: 22px;
@@ -257,4 +258,254 @@
 @media (prefers-reduced-motion: reduce) {
   .article-page .faq-item[open] > p { animation: none; }
   .article-page .faq-item summary, .article-page .faq-item summary::after { transition: none; }
+}
+
+/* ==========================================================================
+   Reusable long-form components (added for the CRM comparison article).
+   All scoped to .article-page; nothing here changes the constraint article.
+   ========================================================================== */
+
+/* Longer titles: wider measure and a slightly smaller size so they wrap well. */
+.article-page .article-hero--long h1 {
+  max-width: 22ch;
+  font-size: clamp(2rem, 3.8vw, 3.05rem) !important;
+  line-height: 1.1 !important;
+}
+
+/* Sub-headings, lists and links in running copy. */
+.article-page .article-body > h3,
+.article-page .platform > h3 {
+  margin: 28px 0 8px;
+  color: var(--navy);
+  font-family: var(--type-serif);
+  font-size: clamp(1.1rem, 1.4vw, 1.22rem) !important;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.article-page .article-body > ul,
+.article-page .platform > ul {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  list-style: disc;
+}
+.article-page .article-body > ul li,
+.article-page .platform > ul li { margin-bottom: 4px; }
+.article-page .article-body > ul li::marker,
+.article-page .platform > ul li::marker { color: var(--gold); }
+.article-page .article-body p a {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 250ms ease;
+}
+.article-page .article-body p a:hover,
+.article-page .article-body p a:focus-visible { color: var(--navy); }
+.article-page .article-body strong { color: var(--navy); font-weight: 700; }
+
+/* Ten-stage journey: two rows of five on desktop, a vertical path on mobile. */
+.article-page .journey-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px 0;
+  margin: 28px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.article-page .journey-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-right: 10px;
+}
+.article-page .journey-flow li::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 42px;
+  right: 6px;
+  height: 1px;
+  background: var(--line);
+}
+.article-page .journey-flow li:nth-child(5n)::after { display: none; }
+.article-page .flow-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #a6b9aa;
+  border-radius: 50%;
+  background: var(--ivory, #faf8f5);
+  color: var(--green);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+.article-page .journey-flow li:nth-child(4) .flow-num { border-color: var(--gold); color: #a86f1f; }
+.article-page .flow-name { color: var(--navy); font-size: .9rem; font-weight: 700; line-height: 1.3; }
+
+/* Four definitions: compact two-column editorial blocks. */
+.article-page .definitions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+  margin: 24px 0 28px;
+}
+.article-page .definitions > div { padding: 22px 0 24px; border-top: 1px solid var(--line); }
+.article-page .definitions dt {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-family: var(--type-serif);
+  font-size: clamp(1.1rem, 1.4vw, 1.22rem);
+  font-weight: 500;
+}
+.article-page .def-label { color: #a86f1f; font-family: var(--type-sans, inherit); font-size: .7rem; font-weight: 800; letter-spacing: .1em; }
+.article-page .definitions dd { margin: 0; font-size: .97rem; line-height: 1.7; }
+
+/* Platform sections: editorial index line and a hairline between platforms. */
+.article-page .platform { margin-top: clamp(48px, 5vw, 64px); padding-top: clamp(28px, 3vw, 36px); border-top: 1px solid var(--line); }
+.article-page .platform > h2 { margin-top: 0 !important; }
+.article-page .platform > p { margin: 0 0 16px; }
+.article-page .platform-index {
+  margin: 0 0 10px !important;
+  color: var(--muted);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.article-page .platform-index span { color: #a86f1f; }
+
+/* Comparison table: warm surface, scrolls sideways on small screens. */
+.article-page .table-scroll {
+  width: min(1200px, calc(100vw - 40px));
+  margin: 24px 0 12px calc(50% - min(600px, 50vw - 20px));
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fbfaf7;
+  -webkit-overflow-scrolling: touch;
+}
+.article-page .table-scroll:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.article-page .compare { width: 100%; min-width: 1040px; border-collapse: collapse; font-size: .84rem; line-height: 1.5; }
+.article-page .compare caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.article-page .compare th,
+.article-page .compare td { padding: 14px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.article-page .compare thead th {
+  color: var(--navy);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #f3efe6;
+  border-bottom-color: rgba(201, 138, 44, .35);
+}
+.article-page .compare tbody th { color: var(--navy); font-family: var(--type-serif); font-size: 1rem; font-weight: 500; white-space: nowrap; }
+.article-page .compare tbody tr:last-child > * { border-bottom: 0; }
+.article-page .compare tbody tr:hover { background: rgba(42, 93, 74, .04); }
+.article-page .compare th:last-child,
+.article-page .compare td:last-child { min-width: 188px; }
+.article-page .compare td { min-width: 96px; }
+.article-page .table-note { margin: 0 0 16px !important; color: var(--muted); font-size: .84rem; font-style: italic; }
+
+/* Inline photograph within the reading column. */
+.article-page .article-inline-figure { margin: 40px 0; }
+.article-page .article-inline-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.article-page .article-inline-figure figcaption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.article-page .article-inline-figure figcaption::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+/* Connected stack: a quiet vertical chain. */
+.article-page .stack-flow { margin: 24px 0 28px; padding: 0; list-style: none; }
+.article-page .stack-flow li {
+  position: relative;
+  padding: 10px 0 10px 32px;
+  color: var(--navy);
+  font-size: .95rem;
+  font-weight: 700;
+}
+.article-page .stack-flow li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  background: var(--ivory, #faf8f5);
+  transform: translateY(-50%);
+}
+.article-page .stack-flow li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 6px);
+  left: 10px;
+  width: 1px;
+  height: calc(100% - 3px);
+  background: var(--line);
+}
+
+/* Ten questions: numbered two-column framework with hairlines. */
+.article-page .question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+  margin: 20px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.article-page .question-grid li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.article-page .question-grid .step-num {
+  width: auto;
+  height: auto;
+  padding-top: 3px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: var(--green);
+}
+.article-page .question-grid p { margin: 0; color: var(--navy); font-weight: 600; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .article-page .journey-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .article-page .journey-flow li::after { display: none; }
+  .article-page .definitions,
+  .article-page .question-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .article-page .journey-flow { grid-template-columns: 1fr; gap: 0; }
+  .article-page .journey-flow li { flex-direction: row; align-items: center; gap: 14px; padding: 6px 0 16px; }
+  .article-page .journey-flow li:not(:last-child)::after { display: block; top: 40px; left: 17px; right: auto; width: 1px; height: calc(100% - 34px); }
+  .article-page .article-inline-figure img { aspect-ratio: 4 / 3; }
 }

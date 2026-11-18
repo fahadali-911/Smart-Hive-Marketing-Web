@@ -166,6 +166,17 @@ both states, `blogs/blog.css` the scoped styles (everything under
 (drawer, sticky header, reveals, filters) and `blogs/blog-content.js` the content
 layer: loading posts, routing on `?post=`, and rendering cards and articles.
 
+### Article pages
+
+Each published article is its own HTML file in `blogs/`, built from the same template (shared header, footer, closing band, `blog.css`, `article.css` and `blog.js`), with a card on the Blog index:
+
+| URL | Article |
+| --- | --- |
+| `/blogs/find-the-constraint-medspa-growth.html` | How to Find the One Constraint Holding Back Your MedSpa Growth |
+| `/blogs/best-crm-for-medspas.html` | Best CRM for Med Spas: GoHighLevel vs Boulevard vs PatientNow, Aesthetic Record & More |
+
+To add an article: copy an existing article file, replace the content inside `<article class="blog-article">`, update the title, description, canonical, Open Graph tags and JSON-LD, add a card to the `#blog-grid` on `blogs/index.html`, and add the URL to `sitemap.xml`. Reusable long-form components (journey flow, definitions, platform sections, comparison table, question grid, FAQ accordion) live in `blogs/article.css`.
+
 ### Where posts come from
 
 Published posts are read from the Supabase `blog_posts` table — the same
