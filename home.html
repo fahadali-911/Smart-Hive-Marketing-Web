@@ -637,6 +637,37 @@
     }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
 
+    /* Home hero carousel: slides share the .hero-photo frame, so its size never changes. */
+    .home-hero-carousel__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1600ms cubic-bezier(.45, 0, .25, 1); }
+    .home-hero-carousel__slide.is-active { opacity: 1; z-index: 1; }
+    .home-hero-carousel__slide img { transform-origin: center; }
+    .home-hero-carousel__controls {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
+      padding: 56px 18px 16px;
+      background: linear-gradient(to top, rgba(5, 24, 32, .32), transparent);
+      pointer-events: none;
+    }
+    .home-hero-carousel__indicators { display: flex; gap: 6px; padding-bottom: 8px; }
+    .home-hero-carousel__indicator { position: relative; width: 26px; height: 2px; overflow: hidden; border-radius: 2px; background: rgba(250, 248, 245, .45); }
+    .home-hero-carousel__indicator i { position: absolute; inset: 0; transform: scaleX(0); transform-origin: left; background: #e5a84b; }
+    .home-hero-carousel__indicator.is-active i { transform: scaleX(1); }
+    @media (prefers-reduced-motion: no-preference) {
+      .home-hero-carousel__slide.is-active img { animation: home-hero-drift 5500ms ease-out both; }
+      .home-hero-carousel__indicator.is-active i { animation: home-hero-progress var(--home-hero-delay, 4000ms) linear both; }
+      .home-hero-carousel.is-paused .home-hero-carousel__indicator.is-active i { animation-play-state: paused; }
+    }
+    @keyframes home-hero-drift {
+      0% { transform: scale(1.015); }
+      20% { transform: scale(1); }
+      100% { transform: scale(1.025); }
+    }
+    @keyframes home-hero-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @media (prefers-reduced-motion: reduce) {
+      .home-hero-carousel__slide { transition: opacity 200ms linear; }
+      .home-hero-carousel__slide img { animation: none !important; transform: none !important; }
+    }
+
     .context {
       padding: 42px 0;
       border-block: 1px solid var(--line);
@@ -1053,9 +1084,24 @@
           <p class="hero-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Built for med spas and aesthetic practices</p>
         </div>
         <div class="hero-visual" data-reveal>
-          <div class="hero-photo image-hover">
-            <!-- Image source: Pexels / Gustavo Fring -->
-            <img src="https://images.pexels.com/photos/7446684/pexels-photo-7446684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=1500&amp;fit=crop" alt="Dermatology specialist and patient reviewing a treatment plan on a tablet" width="1200" height="1500" fetchpriority="high" decoding="async">
+          <div class="hero-photo home-hero-carousel" data-home-carousel aria-roledescription="carousel" aria-label="Med spa photography">
+            <!-- Slide 1: Pexels / Gustavo Fring. Slides 2 and 3: Unsplash. -->
+            <div class="home-hero-carousel__slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <img loading="eager" fetchpriority="high" src="https://images.pexels.com/photos/7446684/pexels-photo-7446684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=1500&amp;fit=crop" alt="MedSpa practitioner reviewing treatment information with a patient on a tablet" width="1200" height="1500" decoding="async">
+            </div>
+            <div class="home-hero-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+              <img src="https://plus.unsplash.com/premium_photo-1744550769324-f2f6de9e8f50?w=900&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="A gloved practitioner preparing a treatment from a vial in soft window light" width="900" height="1350" loading="lazy" decoding="async" style="object-position: 55% 45%">
+            </div>
+            <div class="home-hero-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1761819921158-c3fa28f39bf0?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="A client relaxing under an LED light-therapy panel in a treatment room" width="1200" height="800" loading="lazy" decoding="async" style="object-position: 42% center">
+            </div>
+            <div class="home-hero-carousel__controls">
+              <div class="home-hero-carousel__indicators" aria-hidden="true">
+                <span class="home-hero-carousel__indicator"><i></i></span>
+                <span class="home-hero-carousel__indicator"><i></i></span>
+                <span class="home-hero-carousel__indicator"><i></i></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1388,5 +1434,6 @@
     })();
   </script>
   <script src="audit-modal.js"></script>
+  <script src="home-hero-carousel.js" defer></script>
 </body>
 </html>
