@@ -26,6 +26,7 @@ const PAGES = [
   { file: 'blogs/index.html', nav: 'blog', header: true, cta: true },
   { file: 'blogs/find-the-constraint-medspa-growth.html', nav: 'blog', header: true, cta: true },
   { file: 'blogs/best-crm-for-medspas.html', nav: 'blog', header: true, cta: true },
+  { file: 'blogs/med-spa-lead-generation-system.html', nav: 'blog', header: true, cta: true },
   { file: '404.html', nav: null, header: false, cta: false } // standalone error layout without the menu script
 ];
 

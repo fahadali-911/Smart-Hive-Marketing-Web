@@ -203,6 +203,7 @@ Each published article is its own HTML file in `blogs/`, built from the same tem
 | --- | --- |
 | `/blogs/find-the-constraint-medspa-growth.html` | How to Find the One Constraint Holding Back Your MedSpa Growth |
 | `/blogs/best-crm-for-medspas.html` | Best CRM for Med Spas: GoHighLevel vs Boulevard vs PatientNow, Aesthetic Record & More |
+| `/blogs/med-spa-lead-generation-system.html` | How a Lead Generation System Helps Medical Spas Get More Clients |
 
 To add an article: copy an existing article file, replace the content inside `<article class="blog-article">`, update the title, description, canonical, Open Graph tags and JSON-LD, add a card to the `#blog-grid` on `blogs/index.html`, and add the URL to `sitemap.xml`. Reusable long-form components (journey flow, definitions, platform sections, comparison table, question grid, FAQ accordion) live in `blogs/article.css`.
 

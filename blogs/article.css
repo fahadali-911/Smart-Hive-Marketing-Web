@@ -509,3 +509,73 @@
   .article-page .journey-flow li:not(:last-child)::after { display: block; top: 40px; left: 17px; right: auto; width: 1px; height: calc(100% - 34px); }
   .article-page .article-inline-figure img { aspect-ratio: 4 / 3; }
 }
+
+/* ==========================================================================
+   Lead generation article components. Scoped to .article-page.
+   ========================================================================== */
+
+/* Images shown whole, uncropped (the cover carries its own title). */
+.article-page .article-figure--whole { aspect-ratio: 16 / 9; }
+.article-page .article-figure--whole img { display: block; object-position: 50% 50%; }
+.article-page .article-inline-figure--whole img { aspect-ratio: 16 / 9 !important; object-position: 50% 50%; }
+
+/* Numbered sub-headings for a list of ways or steps. */
+.article-page .article-body > h3.way-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 40px;
+}
+.article-page .way-num {
+  flex: none;
+  color: #a86f1f;
+  font-family: var(--type-sans, inherit);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+/* Ordered steps in running copy. */
+.article-page .article-steps { margin: 0 0 18px; padding-left: 24px; list-style: decimal; }
+.article-page .article-steps li { margin-bottom: 4px; padding-left: 4px; }
+.article-page .article-steps li::marker { color: #a86f1f; font-weight: 700; }
+
+/* Example message: a quiet quotation. */
+.article-page .article-quote {
+  margin: 8px 0 22px;
+  padding: 20px 26px;
+  border-left: 2px solid var(--green);
+  border-radius: 0 14px 14px 0;
+  background: #fff;
+  box-shadow: 0 10px 28px -20px rgba(12, 26, 36, .35);
+}
+.article-page .article-quote p { margin: 0; color: var(--navy); font-family: var(--type-serif); font-size: 1.08rem; line-height: 1.55; }
+
+/* Two-column table that does not need horizontal scrolling. */
+.article-page .table-scroll--compact { width: 100%; margin: 20px 0 22px; }
+.article-page .compare--compact { min-width: 0; }
+.article-page .compare--compact { font-size: .95rem; }
+.article-page .compare--compact td { min-width: 0; }
+.article-page .compare--compact td:last-child { min-width: 0; }
+.article-page .compare--compact tbody th { width: 38%; white-space: normal; }
+
+/* Worked calculation inside a scenario panel. */
+.article-page .case-example p + p { margin-top: 10px; }
+.article-page .case-example .formula {
+  color: var(--navy);
+  font-family: var(--type-serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  letter-spacing: -.01em;
+}
+.article-page .case-example .formula strong { color: var(--green); font-weight: 600; }
+
+/* Definitions that contain short lists. */
+.article-page .definitions--lists dd ul { margin: 10px 0 0; padding-left: 20px; list-style: disc; }
+.article-page .definitions--lists dd li { margin-bottom: 3px; }
+.article-page .definitions--lists dd li::marker { color: var(--gold); }
+.article-page .article-closing strong a { color: var(--green); }
+
+@media (max-width: 768px) {
+  .article-page .article-figure--whole { margin: 28px 0 36px; }
+  .article-page .article-quote { padding: 18px 20px; }
+}
