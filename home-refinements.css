@@ -1,0 +1,260 @@
+/* ==========================================================================
+   SmartHive Home — refinement layer
+   Loaded last on home.html only. Extends existing classes; renames nothing.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GLOBAL — section rhythm, one content width, focus states
+   -------------------------------------------------------------------------- */
+#smarthive-landing .section,
+#smarthive-landing .context { padding: 120px 0; }
+@media (max-width: 1024px) {
+  #smarthive-landing .section,
+  #smarthive-landing .context { padding: 88px 0; }
+}
+@media (max-width: 680px) {
+  #smarthive-landing .section,
+  #smarthive-landing .context { padding: 64px 0; }
+}
+
+#smarthive-landing a:focus-visible,
+#smarthive-landing button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. HERO — even vertical balance, softer shadow, clearer indicators
+   -------------------------------------------------------------------------- */
+#smarthive-landing .hero { padding: 72px 0; }
+#smarthive-landing .hero-photo {
+  border-color: rgba(229, 223, 212, .7);
+  box-shadow: 0 34px 80px -28px rgba(12, 26, 36, .28), 0 10px 24px -14px rgba(12, 26, 36, .12);
+}
+#smarthive-landing .home-hero-carousel__indicators { gap: 8px; }
+#smarthive-landing .home-hero-carousel__indicator { width: 34px; height: 3px; background: rgba(250, 248, 245, .6); }
+#smarthive-landing .home-hero-carousel__indicator.is-active { background: rgba(229, 168, 75, .35); }
+
+/* --------------------------------------------------------------------------
+   3. CONTEXT — heading block and pillars share one top line, roomier pillars
+   -------------------------------------------------------------------------- */
+#smarthive-landing .context-grid {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: clamp(40px, 6vw, 88px);
+}
+#smarthive-landing .context-copy { display: block; }
+#smarthive-landing .context-copy h2 { max-width: 15ch; margin: 0 0 16px; }
+#smarthive-landing .context-copy p { max-width: 460px; font-size: .95rem; }
+#smarthive-landing .context-points { border-left: 0; gap: 0; }
+#smarthive-landing .context-point {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 24px 8px;
+  border-right: 0;
+  border-left: 1px solid #d9d1c4;
+}
+#smarthive-landing .context-point i {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--green);
+  font-size: 1rem;
+}
+#smarthive-landing .context-point strong { font-size: .7rem; }
+.context-point-desc { color: var(--muted); font-size: .84rem; line-height: 1.55; }
+@media (max-width: 1100px) {
+  #smarthive-landing .context-grid { grid-template-columns: 1fr; }
+  #smarthive-landing .context-copy h2 { max-width: 22ch; }
+}
+@media (max-width: 680px) {
+  #smarthive-landing .context-points { grid-template-columns: 1fr; }
+  #smarthive-landing .context-point {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 16px;
+    row-gap: 4px;
+    padding: 16px 0;
+    border-left: 0;
+    border-top: 1px solid #d9d1c4;
+  }
+  #smarthive-landing .context-point:first-child { border-top: 0; }
+  #smarthive-landing .context-point i { grid-row: 1 / span 2; }
+  #smarthive-landing .context-point strong { align-self: end; }
+}
+
+/* --------------------------------------------------------------------------
+   4. GROWTH PROBLEM — text beside the leaking-funnel visual (name strip removed)
+   -------------------------------------------------------------------------- */
+#smarthive-landing .problem-grid {
+  grid-template-columns: .82fr 1.18fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 70px);
+}
+.leak-funnel { margin: 0; }
+.leak-funnel svg { display: block; width: 100%; height: auto; }
+.leak-funnel figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.leak-funnel figcaption::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .leak-funnel .leak-drop { animation: leak-drip 3.2s ease-in-out infinite; }
+  .leak-funnel .leak-drop:nth-of-type(2) { animation-delay: .8s; }
+  .leak-funnel .leak-drop:nth-of-type(3) { animation-delay: 1.6s; }
+  .leak-funnel .leak-drop:nth-of-type(4) { animation-delay: 2.4s; }
+}
+@keyframes leak-drip {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(4px); opacity: .55; }
+}
+@media (max-width: 900px) {
+  #smarthive-landing .problem-grid { grid-template-columns: 1fr; }
+}
+/* On phones the funnel scales down, so its labels are enlarged to stay readable. */
+@media (max-width: 600px) {
+  .leak-funnel text { font-size: 19px; letter-spacing: 1px; }
+}
+
+/* --------------------------------------------------------------------------
+   5. SYSTEM (dark) — readable heading, connectors that meet the circles
+   -------------------------------------------------------------------------- */
+#smarthive-landing .system .section-heading h2 { color: var(--white) !important; }
+#smarthive-landing .stages::before { display: none; }
+#smarthive-landing .stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 64px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 138, 44, .9), rgba(67, 213, 161, .9));
+  pointer-events: none;
+}
+/* The step stays put on hover so its connector does not move; the circle lifts. */
+#smarthive-landing .stages.point-hover > .stage:hover {
+  transform: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+#smarthive-landing .stage:hover .stage-icon { transform: translateY(-3px); border-color: var(--gold); color: var(--gold); }
+#smarthive-landing .stage h3 { transition: color 250ms ease; }
+#smarthive-landing .stage:hover h3 { color: #f6ead4; }
+#smarthive-landing .system-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(201, 138, 44, .55);
+  font-size: .86rem;
+  transition: color 250ms ease, border-color 250ms ease;
+}
+#smarthive-landing .system-link:hover { color: #f6ead4; border-color: var(--gold); }
+@media (max-width: 1100px) {
+  #smarthive-landing .stage:not(:last-child)::after { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   6. CAPABILITIES — larger icons, card hover, consistent pills
+   -------------------------------------------------------------------------- */
+#smarthive-landing .capability {
+  transition: background-color 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+#smarthive-landing .capability::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms ease;
+}
+#smarthive-landing .capability:hover {
+  z-index: 1;
+  background: var(--cream);
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px -26px rgba(12, 26, 36, .28);
+}
+#smarthive-landing .capability:hover::before { transform: scaleX(1); }
+#smarthive-landing .capability-icon { width: 52px; height: 52px; font-size: 1.1rem; }
+#smarthive-landing .capability-list li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. WHY — refined numbered list; columns share a top line
+   -------------------------------------------------------------------------- */
+#smarthive-landing .why { padding-bottom: 96px; }
+#smarthive-landing .why-grid { align-items: start; }
+#smarthive-landing .differences { border-top: 0; }
+#smarthive-landing .difference { padding: 32px 0; border-bottom: 1px solid var(--line); }
+#smarthive-landing .difference:first-child { padding-top: 0; }
+#smarthive-landing .difference-number {
+  padding-top: 6px;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+@media (max-width: 1024px) { #smarthive-landing .why { padding-bottom: 76px; } }
+@media (max-width: 680px) { #smarthive-landing .why { padding-bottom: 56px; } }
+
+/* --------------------------------------------------------------------------
+   8. PROOF — results bar (two verified stats)
+   -------------------------------------------------------------------------- */
+#smarthive-landing .result-bar {
+  display: block;
+  padding: 22px 24px;
+}
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.result-stat { padding-left: 16px; border-left: 1px solid var(--line); }
+.result-stat:first-child { padding-left: 0; border-left: 0; }
+.result-stat b {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--green);
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+.result-stat span { display: block; margin-top: 6px; color: var(--muted); font-size: .74rem; line-height: 1.4; }
+.result-note { margin: 16px 0 0; color: var(--muted); font-size: .78rem; }
+
+/* --------------------------------------------------------------------------
+   REDUCED MOTION — no lifts, drips or arrow movement
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .leak-funnel .leak-drop { animation: none !important; }
+  #smarthive-landing .capability:hover,
+  #smarthive-landing .stage:hover .stage-icon { transform: none; }
+}
+

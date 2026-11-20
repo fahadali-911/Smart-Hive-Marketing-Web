@@ -666,3 +666,102 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 640px) {
   main [id], section[id], article[id] { scroll-margin-top: 88px; }
 }
+
+/* ==========================================================================
+   Shared header button, sticky state and closing-band glow
+   (moved from home-refinements.css so every page matches the Home page)
+   ========================================================================== */
+.site-header .header-inner { transition: min-height 300ms ease, height 300ms ease; }
+.site-header.scrolled {
+  box-shadow: none !important;
+  border-bottom-color: rgba(12, 26, 36, .08) !important;
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+.site-header.scrolled,
+.site-header.scrolled .header-inner { min-height: 68px; height: 68px; }
+
+.site-header .header-actions { display: flex; align-items: center; gap: 12px; }
+.home-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #2a5d4a;
+  color: #fff;
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 250ms ease, transform 250ms ease, box-shadow 250ms ease;
+}
+.home-nav-cta i { font-size: .75rem; transition: transform 250ms ease; }
+.home-nav-cta:hover { background: #224c3c; color: #fff; transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(42, 93, 74, .55); }
+.home-nav-cta:hover i { transform: translateX(3px); }
+.home-nav-cta:focus-visible { outline: 2px solid #c98a2c; outline-offset: 3px; }
+@media (max-width: 640px) {
+  .home-nav-cta { display: none; }
+}
+
+.final-cta { position: relative; overflow: hidden; isolation: isolate; }
+.final-cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -30%;
+  left: 50%;
+  width: min(900px, 120vw);
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(42, 93, 74, .45) 0%, rgba(42, 93, 74, 0) 65%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-nav-cta:hover,
+  .home-nav-cta:hover i { transform: none; }
+}
+
+/* ==========================================================================
+   Shared-piece parity: pins the header, closing band and footer to the Home
+   page's measurements, whatever each page's own stylesheet sets on .container,
+   links or paragraphs.
+   ========================================================================== */
+.site-header > .container,
+.final-cta > .container:not(.cta-row) {
+  width: min(calc(100% - 48px), 1240px) !important;
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-inline: auto !important;
+}
+.final-cta .cta-row { max-width: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+.site-header:not(.scrolled) .header-inner { height: auto !important; }
+.site-header .brand-name { letter-spacing: -0.01em; }
+.site-header .brand-tag { line-height: 1.65; }
+.site-header .nav-link { display: flex; align-items: center; gap: 6px; }
+.site-header .mobile-menu-toggle { color: #0c1a24; font-size: 16px; line-height: 1.65; }
+.final-cta .eyebrow { gap: 9px; }
+/* Block-level so the band height does not depend on each page's font metrics. */
+.final-cta .cta-row > div > .eyebrow { display: flex; width: fit-content; margin-inline: auto; }
+/* Same breakpoint as Home: the menu icon only appears when the menu collapses. */
+@media (min-width: 993px) { .site-header .mobile-menu-toggle { display: none !important; } }
+.site-footer .footer-brand-desc { margin: 0 0 14px; }
+.site-footer .footer-links-list a { color: #8fa1ab; }
+.site-footer .footer-links-list a:hover,
+.site-footer .footer-links-list a:focus-visible { color: #fff; }
+@media (max-width: 900px) {
+  .site-header > .container,
+  .final-cta > .container:not(.cta-row) { width: min(calc(100% - 38px), 1240px) !important; }
+}
+@media (max-width: 680px) {
+  .site-header > .container,
+  .final-cta > .container:not(.cta-row) { width: min(calc(100% - 30px), 1240px) !important; }
+}
+/* Keep the header button text white even where a page resets link colours (e.g. the Blog). */
+.site-header .home-nav-cta,
+.site-header .home-nav-cta:hover { color: #fff; }

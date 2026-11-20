@@ -686,25 +686,6 @@
     .problem-grid { display: grid; grid-template-columns: .78fr 1.22fr; align-items: end; gap: 70px; }
     .problem-copy h2 { max-width: 570px; }
     .problem-copy .lead { max-width: 550px; margin-bottom: 0; }
-    .leak-journey { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 29px 0 11px; border-block: 1px solid var(--line); }
-    .leak-step { position: relative; min-height: 98px; padding: 13px 16px; border-left: 1px solid var(--line); }
-    .leak-step:first-child { border-left: 0; }
-    .leak-step .icon { color: var(--green); font-size: 1rem; }
-    .leak-step strong { display: block; margin-top: 13px; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
-    .leak-step small { display: block; margin-top: 5px; color: var(--muted); font-size: .68rem; line-height: 1.45; }
-    .leak-step:not(:last-child)::after {
-      position: absolute;
-      z-index: 2;
-      top: 40px;
-      right: -8px;
-      width: 15px;
-      height: 15px;
-      border: 3px solid var(--white);
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 1px var(--gold);
-      content: "";
-    }
 
     .system { background: var(--navy); color: var(--white); }
     .system .eyebrow { color: var(--emerald); }
@@ -929,12 +910,6 @@
       .context-point { display: grid; grid-template-columns: 28px 1fr; align-items: center; padding: 12px 3px; border-top: 1px solid #d9d1c4; border-right: 0; }
       .context-point:first-child { border-top: 0; }
       .context-point i { margin-bottom: 0; }
-      .leak-journey { grid-template-columns: 1fr; padding: 0; }
-      .leak-step { display: grid; grid-template-columns: 30px 1fr; min-height: 0; padding: 17px 5px; border-top: 1px solid var(--line); border-left: 0; }
-      .leak-step:first-child { border-top: 0; }
-      .leak-step strong { margin-top: 0; }
-      .leak-step small { grid-column: 2; }
-      .leak-step:not(:last-child)::after { top: auto; right: auto; bottom: -7px; left: 7px; }
       .stages { grid-template-columns: 1fr 1fr; gap: 34px 22px; }
       .stage-icon { width: 54px; height: 54px; margin-bottom: 19px; }
       .continuous { display: grid; }
@@ -966,13 +941,15 @@
   <link rel="stylesheet" href="audit-modal.css">
   <link rel="stylesheet" href="typography.css">
   <link rel="stylesheet" href="site-shell.css">
+  <link rel="stylesheet" href="home-refinements.css">
 </head>
 <body>
   <div id="smarthive-landing">
+  <!-- shared:header (edit partials/header.html, then run npm run build:shared) -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a href="home.html" class="brand-logo" id="header-logo">
-        <img src="assets/smarthive-brand-mark.png" alt="SmartHive Icon" class="brand-favicon-img" />
+      <a href="/" class="brand-logo" id="header-logo">
+        <img src="/assets/smarthive-brand-mark.png" alt="SmartHive Icon" class="brand-favicon-img" />
         <div class="brand-text-wrap">
           <span class="brand-name">Smart <span>Hive</span></span>
           <span class="brand-tag">MARKETING</span>
@@ -981,16 +958,17 @@
 
       <nav>
         <ul class="nav-menu" id="primary-nav">
-          <li><a href="home.html" class="nav-link active" aria-current="page">Home</a></li>
-          <li><a href="grow.html" class="nav-link">How We Grow</a></li>
-          <li><a href="growth leak.html" class="nav-link">Growth Leaks</a></li>
-          <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/" class="nav-link active" aria-current="page" data-nav="home">Home</a></li>
+          <li><a href="/how-we-grow" class="nav-link" data-nav="grow">How We Grow</a></li>
+          <li><a href="/growth-leaks" class="nav-link" data-nav="leaks">Growth Leaks</a></li>
+          <li><a href="/case-studies" class="nav-link" data-nav="cases">Case Studies</a></li>
+          <li><a href="/blog" class="nav-link" data-nav="blog">Blog</a></li>
+          <li><a href="/contact" class="nav-link" data-nav="contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <a class="home-nav-cta" href="/contact?source=growth-audit-cta#contact-form">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -1000,13 +978,12 @@
     </div>
   </header>
 
-  <!-- Canonical Mobile Navigation Drawer & Backdrop -->
   <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
 
   <aside class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer-header">
-      <a href="home.html" class="drawer-brand" aria-label="SmartHive Home">
-        <img src="assets/smarthive-brand-mark.png" alt="SmartHive" class="drawer-brand-img" />
+      <a href="/" class="drawer-brand" aria-label="SmartHive Home">
+        <img src="/assets/smarthive-brand-mark.png" alt="SmartHive" class="drawer-brand-img" />
         <span class="drawer-brand-name">Smart <span>Hive</span></span>
       </a>
       <button class="drawer-close-btn" id="drawer-close" aria-label="Close navigation menu">
@@ -1021,55 +998,28 @@
       <div class="drawer-eyebrow">EXPLORE</div>
       <nav class="drawer-nav" aria-label="Mobile Navigation Menu">
         <ul class="drawer-menu">
-          <li>
-            <a href="home.html" class="drawer-link active" aria-current="page">
-              <span class="drawer-num">01</span>
-              <span class="drawer-label">Home</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="grow.html" class="drawer-link">
-              <span class="drawer-num">02</span>
-              <span class="drawer-label">How We Grow</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="growth leak.html" class="drawer-link">
-              <span class="drawer-num">03</span>
-              <span class="drawer-label">Growth Leaks</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="case-studies.html" class="drawer-link">
-              <span class="drawer-num">04</span>
-              <span class="drawer-label">Case Studies</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li><a href="/blog" class="drawer-link"><span class="drawer-num">05</span><span class="drawer-label">Blog</span><span class="drawer-indicator"></span></a></li>
-          <li>
-            <a href="contact.html" class="drawer-link">
-              <span class="drawer-num">06</span>
-              <span class="drawer-label">Contact</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
+          <li><a href="/" class="drawer-link active" aria-current="page" data-nav="home"><span class="drawer-num">01</span><span class="drawer-label">Home</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/how-we-grow" class="drawer-link" data-nav="grow"><span class="drawer-num">02</span><span class="drawer-label">How We Grow</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/growth-leaks" class="drawer-link" data-nav="leaks"><span class="drawer-num">03</span><span class="drawer-label">Growth Leaks</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/case-studies" class="drawer-link" data-nav="cases"><span class="drawer-num">04</span><span class="drawer-label">Case Studies</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/blog" class="drawer-link" data-nav="blog"><span class="drawer-num">05</span><span class="drawer-label">Blog</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/contact" class="drawer-link" data-nav="contact"><span class="drawer-num">06</span><span class="drawer-label">Contact</span><span class="drawer-indicator"></span></a></li>
         </ul>
       </nav>
     </div>
 
     <div class="drawer-footer">
-      <a class="drawer-cta-btn" href="contact.html">Contact SmartHive <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="drawer-cta-btn" href="/contact?source=growth-audit-cta#contact-form">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       <div class="drawer-tagline">
         <strong>SMART HIVE MARKETING</strong>
-        <span>Independent & Regional Med Spa Growth Systems</span>
+        <span>Independent &amp; Regional Med Spa Growth Systems</span>
       </div>
     </div>
   </aside>
+  <!-- /shared:header -->
 
+  <!-- Canonical Mobile Navigation Drawer & Backdrop -->
+  
   <main>
     <section class="hero" id="hero">
       <div class="container hero-grid">
@@ -1078,7 +1028,6 @@
           <h1>Build a Patient Growth System, <span class="heading-accent">Not Just More Traffic.</span></h1>
           <p class="lead">SmartHive connects the journey from patient discovery through booking, treatment, and return—so growth is built around the whole practice, not one marketing channel.</p>
           <div class="hero-actions">
-            <button class="button js-open-audit" type="button">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
             <a class="button secondary" href="grow.html">See How We Grow <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
           <p class="hero-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Built for med spas and aesthetic practices</p>
@@ -1114,9 +1063,9 @@
           <p>Patients move through discovery, evaluation, booking, treatment, and return. SmartHive connects those moments instead of optimizing each one in isolation.</p>
         </div>
         <div class="context-points point-hover" aria-label="Areas of patient growth">
-          <div class="context-point"><i class="fa-solid fa-bullseye" aria-hidden="true"></i><strong>Acquisition</strong></div>
-          <div class="context-point"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><strong>Patient experience</strong></div>
-          <div class="context-point"><i class="fa-solid fa-rotate" aria-hidden="true"></i><strong>Retention</strong></div>
+          <div class="context-point"><i class="fa-solid fa-bullseye" aria-hidden="true"></i><strong>Acquisition</strong><span class="context-point-desc">Get found by the right patients.</span></div>
+          <div class="context-point"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><strong>Patient experience</strong><span class="context-point-desc">Build a better patient experience.</span></div>
+          <div class="context-point"><i class="fa-solid fa-rotate" aria-hidden="true"></i><strong>Retention</strong><span class="context-point-desc">Turn appointments into relationships.</span></div>
         </div>
       </div>
     </section>
@@ -1128,13 +1077,10 @@
           <h2>Growth Usually Leaks Between the Click <span class="heading-accent">and the Return Visit.</span></h2>
           <p class="lead">A practice can generate demand and still lose momentum through weak conversion, slow follow-up, booking friction, or missed retention opportunities.</p>
         </div>
-        <div class="leak-journey point-hover" aria-label="Patient journey bottlenecks" data-reveal>
-          <div class="leak-step"><i class="icon fa-solid fa-arrow-pointer" aria-hidden="true"></i><strong>Traffic</strong><small>Right demand</small></div>
-          <div class="leak-step"><i class="icon fa-solid fa-message" aria-hidden="true"></i><strong>Inquiry</strong><small>Clear intent</small></div>
-          <div class="leak-step"><i class="icon fa-solid fa-calendar-check" aria-hidden="true"></i><strong>Booking</strong><small>Less friction</small></div>
-          <div class="leak-step"><i class="icon fa-solid fa-heart-pulse" aria-hidden="true"></i><strong>Treatment</strong><small>Better experience</small></div>
-          <div class="leak-step"><i class="icon fa-solid fa-rotate" aria-hidden="true"></i><strong>Return</strong><small>Next visit</small></div>
-        </div>
+        <figure class="leak-funnel" data-reveal role="img" aria-label="A funnel narrowing from traffic to inquiry, booking, treatment and return, with patients leaking out between each stage">
+          <svg viewBox="0 0 640 252" aria-hidden="true" focusable="false"><g><rect x="20" y="0" width="600" height="40" rx="20" fill="#f2eee6" stroke="#e5dfd4"/><text x="320" y="25" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#0c1a24">TRAFFIC</text><rect x="65" y="52" width="510" height="40" rx="20" fill="#e9f3ee"/><text x="320" y="77" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#0c1a24">INQUIRY</text><rect x="110" y="104" width="420" height="40" rx="20" fill="#cfe3d8"/><text x="320" y="129" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#0c1a24">BOOKING</text><rect x="155" y="156" width="330" height="40" rx="20" fill="#9fc4b2"/><text x="320" y="181" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#0c1a24">TREATMENT</text><rect x="200" y="208" width="240" height="40" rx="20" fill="#2a5d4a"/><text x="320" y="233" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#ffffff">RETURN</text></g><g><path class="leak-drop" d="M596 41 C601 47, 601 52, 596 52 C591 52, 591 47, 596 41 Z" fill="#c98a2c"/><path class="leak-drop" d="M89 93 C94 99, 94 104, 89 104 C84 104, 84 99, 89 93 Z" fill="#c98a2c"/><path class="leak-drop" d="M506 145 C511 151, 511 156, 506 156 C501 156, 501 151, 506 145 Z" fill="#c98a2c"/><path class="leak-drop" d="M179 197 C184 203, 184 208, 179 208 C174 208, 174 203, 179 197 Z" fill="#c98a2c"/></g></svg>
+          <figcaption>Where momentum leaks between stages</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -1227,11 +1173,18 @@
             <div class="case-row"><dt>Diagnosis</dt><dd>The website led with the device brand instead of the patient’s concerns, and the existing patient database had never been segmented.</dd></div>
             <div class="case-row"><dt>System</dt><dd>Condition-focused landing pages were paired with a 14-day reactivation campaign sent to 920 past patients.</dd></div>
           </dl>
-          <div class="result-callout"><strong>34 packages</strong><span>sold in 45 days with no additional paid media spend.</span></div>
+          <div class="result-callout result-bar">
+            <div class="result-stats">
+              <div class="result-stat"><b>34</b><span>treatment packages sold</span></div>
+              <div class="result-stat"><b>45</b><span>days to sell them</span></div>
+            </div>
+            <p class="result-note">Achieved with no additional paid media spend.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- shared:cta (edit partials/cta.html, then run npm run build:shared) -->
     <section class="final-cta" id="final-cta">
       <div class="container cta-row" data-reveal>
         <div>
@@ -1239,14 +1192,16 @@
           <h2>See Where Your Patient Journey <span class="heading-accent">Is Losing Momentum.</span></h2>
           <p>We’ll examine the journey from discovery through retention and identify where the highest-leverage improvements may exist.</p>
         </div>
-        <a class="button cta-gold" href="contact.html?source=growth-audit-cta#contact-form">
+        <a class="button cta-gold" href="/contact?source=growth-audit-cta#contact-form">
           <span>Book a Free Audit</span>
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
     </section>
+  <!-- /shared:cta -->
   </main>
 
+  <!-- shared:footer (edit partials/footer.html, then run npm run build:shared) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1258,32 +1213,32 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <ul class="footer-links-list">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="grow.html">How We Grow</a></li>
-            <li><a href="growth leak.html">Growth Leaks</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/how-we-grow">How We Grow</a></li>
+            <li><a href="/growth-leaks">Growth Leaks</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer-col-title">Solutions</div>
           <ul class="footer-links-list">
-            <li><a href="grow.html#pillar-02">Patient Conversion Systems</a></li>
-            <li><a href="grow.html#pillar-01">Local Search Domination</a></li>
-            <li><a href="grow.html#pillar-03">Lead Protection &amp; Speed-to-Lead</a></li>
-            <li><a href="grow.html#pillar-06">Retention &amp; Reactivation</a></li>
-            <li><a href="grow.html#pillar-05">Membership MRR Optimization</a></li>
+            <li><a href="/how-we-grow#pillar-02">Patient Conversion Systems</a></li>
+            <li><a href="/how-we-grow#pillar-01">Local Search Domination</a></li>
+            <li><a href="/how-we-grow#pillar-03">Lead Protection &amp; Speed-to-Lead</a></li>
+            <li><a href="/how-we-grow#pillar-06">Retention &amp; Reactivation</a></li>
+            <li><a href="/how-we-grow#pillar-05">Membership MRR Optimization</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer-col-title">Get Started</div>
           <ul class="footer-links-list">
-            <li><a href="contact.html" class="footer-link-strong">Contact SmartHive &rarr;</a></li>
-            <li><a href="#sample-audit">Sample Diagnostic</a></li>
-            <li><a href="growth leak.html">Revenue Leaks Teardown</a></li>
+            <li><a href="/contact" class="footer-link-strong">Contact SmartHive &rarr;</a></li>
+            <li><a href="/#sample-audit">Sample Diagnostic</a></li>
+            <li><a href="/growth-leaks">Revenue Leaks Teardown</a></li>
           </ul>
         </div>
       </div>
@@ -1294,6 +1249,7 @@
       </div>
     </div>
   </footer>
+  <!-- /shared:footer -->
 
   <div class="site-audit-modal" id="audit-modal" role="dialog" aria-modal="true" aria-labelledby="audit-title" aria-describedby="audit-description" aria-hidden="true">
     <div class="site-audit-dialog" role="document">

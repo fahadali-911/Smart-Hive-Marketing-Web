@@ -39,6 +39,7 @@
 </head>
 <body class="smart-hive-blog article-page">
   <a class="blog-skip" href="#blog-main">Skip to insights</a>
+  <!-- shared:header (edit partials/header.html, then run npm run build:shared) -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="/" class="brand-logo" id="header-logo">
@@ -49,18 +50,19 @@
         </div>
       </a>
 
-      <nav aria-label="Primary navigation">
+      <nav>
         <ul class="nav-menu" id="primary-nav">
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/how-we-grow" class="nav-link">How We Grow</a></li>
-          <li><a href="/growth-leaks" class="nav-link">Growth Leaks</a></li>
-          <li><a href="/case-studies" class="nav-link">Case Studies</a></li>
-          <li><a href="/blog" class="nav-link active" aria-current="page">Blog</a></li>
-          <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="/how-we-grow" class="nav-link" data-nav="grow">How We Grow</a></li>
+          <li><a href="/growth-leaks" class="nav-link" data-nav="leaks">Growth Leaks</a></li>
+          <li><a href="/case-studies" class="nav-link" data-nav="cases">Case Studies</a></li>
+          <li><a href="/blog" class="nav-link active" aria-current="page" data-nav="blog">Blog</a></li>
+          <li><a href="/contact" class="nav-link" data-nav="contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <a class="home-nav-cta" href="/contact?source=growth-audit-cta#contact-form">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -70,10 +72,9 @@
     </div>
   </header>
 
-  <!-- Canonical Mobile Navigation Drawer & Backdrop -->
   <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
 
-  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true" inert>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer-header">
       <a href="/" class="drawer-brand" aria-label="SmartHive Home">
         <img src="/assets/smarthive-brand-mark.png" alt="SmartHive" class="drawer-brand-img" />
@@ -91,56 +92,28 @@
       <div class="drawer-eyebrow">EXPLORE</div>
       <nav class="drawer-nav" aria-label="Mobile Navigation Menu">
         <ul class="drawer-menu">
-          <li>
-            <a href="/" class="drawer-link">
-              <span class="drawer-num">01</span>
-              <span class="drawer-label">Home</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="/how-we-grow" class="drawer-link">
-              <span class="drawer-num">02</span>
-              <span class="drawer-label">How We Grow</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="/growth-leaks" class="drawer-link">
-              <span class="drawer-num">03</span>
-              <span class="drawer-label">Growth Leaks</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li>
-            <a href="/case-studies" class="drawer-link">
-              <span class="drawer-num">04</span>
-              <span class="drawer-label">Case Studies</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
-          <li><a href="/blog" class="drawer-link active" aria-current="page"><span class="drawer-num">05</span><span class="drawer-label">Blog</span><span class="drawer-indicator"></span></a></li>
-          <li>
-            <a href="/contact" class="drawer-link">
-              <span class="drawer-num">06</span>
-              <span class="drawer-label">Contact</span>
-              <span class="drawer-indicator"></span>
-            </a>
-          </li>
+          <li><a href="/" class="drawer-link" data-nav="home"><span class="drawer-num">01</span><span class="drawer-label">Home</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/how-we-grow" class="drawer-link" data-nav="grow"><span class="drawer-num">02</span><span class="drawer-label">How We Grow</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/growth-leaks" class="drawer-link" data-nav="leaks"><span class="drawer-num">03</span><span class="drawer-label">Growth Leaks</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/case-studies" class="drawer-link" data-nav="cases"><span class="drawer-num">04</span><span class="drawer-label">Case Studies</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/blog" class="drawer-link active" aria-current="page" data-nav="blog"><span class="drawer-num">05</span><span class="drawer-label">Blog</span><span class="drawer-indicator"></span></a></li>
+          <li><a href="/contact" class="drawer-link" data-nav="contact"><span class="drawer-num">06</span><span class="drawer-label">Contact</span><span class="drawer-indicator"></span></a></li>
         </ul>
       </nav>
     </div>
 
     <div class="drawer-footer">
-      <a class="drawer-cta-btn" href="/contact">Contact SmartHive <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="drawer-cta-btn" href="/contact?source=growth-audit-cta#contact-form">Book a Free Audit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       <div class="drawer-tagline">
         <strong>SMART HIVE MARKETING</strong>
-        <span>Independent & Regional Med Spa Growth Systems</span>
+        <span>Independent &amp; Regional Med Spa Growth Systems</span>
       </div>
     </div>
   </aside>
+  <!-- /shared:header -->
 
-
+  <!-- Canonical Mobile Navigation Drawer & Backdrop -->
+  
   <main id="blog-main">
   <article class="blog-article">
     <div class="container">
@@ -228,15 +201,23 @@
 
     </div>
   </article>
-    <section class="final-cta" aria-labelledby="blog-cta-title">
+    <!-- shared:cta (edit partials/cta.html, then run npm run build:shared) -->
+    <section class="final-cta" id="final-cta">
       <div class="container cta-row" data-reveal>
-        <p class="eyebrow">Apply the thinking</p>
-        <h2 id="blog-cta-title">Want to Find the Constraint Inside Your Patient Journey?</h2>
-        <p>SmartHive helps MedSpas identify where growth is being lost before adding more complexity.</p>
-        <a class="button cta-gold" href="/contact?source=growth-audit-cta#contact-form"><span>Book a Free Audit</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <div>
+          <p class="eyebrow">Ready to find your growth bottleneck?</p>
+          <h2>See Where Your Patient Journey <span class="heading-accent">Is Losing Momentum.</span></h2>
+          <p>We’ll examine the journey from discovery through retention and identify where the highest-leverage improvements may exist.</p>
+        </div>
+        <a class="button cta-gold" href="/contact?source=growth-audit-cta#contact-form">
+          <span>Book a Free Audit</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
       </div>
     </section>
+  <!-- /shared:cta -->
   </main>
+  <!-- shared:footer (edit partials/footer.html, then run npm run build:shared) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -248,7 +229,7 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <ul class="footer-links-list">
-            <li><a href="/#hero">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/how-we-grow">How We Grow</a></li>
             <li><a href="/growth-leaks">Growth Leaks</a></li>
             <li><a href="/case-studies">Case Studies</a></li>
@@ -284,5 +265,6 @@
       </div>
     </div>
   </footer>
+  <!-- /shared:footer -->
 </body>
 </html>

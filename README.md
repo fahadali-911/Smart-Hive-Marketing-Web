@@ -24,6 +24,12 @@ A responsive marketing website for **SmartHive Marketing**, focused on helping m
 |-- home.html
 |-- grow.html
 |-- growth leak.html
+|-- partials/
+|   |-- header.html
+|   |-- cta.html
+|   |-- footer.html
+|-- scripts/
+|   |-- build-shared.js
 |-- case-studies.html
 |-- case-studies/
 |   |-- afuri.html
@@ -124,6 +130,29 @@ The pages load Google Fonts and Font Awesome from public CDNs. An internet conne
 ## Repository
 
 [github.com/fahadali-911/Smart-Hive-Marketing-Web](https://github.com/fahadali-911/Smart-Hive-Marketing-Web)
+
+## Shared header, closing band and footer
+
+The header (with the mobile menu), the closing "Book a Free Audit" band and the
+footer are written once, in `partials/`:
+
+| File | Used on |
+| --- | --- |
+| `partials/header.html` | every page except `404.html` |
+| `partials/cta.html` | every page except `contact.html` and `404.html` |
+| `partials/footer.html` | every page |
+
+`scripts/build-shared.js` stamps them into each page between
+`<!-- shared:… -->` markers, highlights the right menu item per page, and fills
+in the one audit link (`/contact?source=growth-audit-cta#contact-form`).
+
+- Edit a partial, then run `npm run build:shared`.
+- `npm run check` fails if any page is out of date with the partials.
+- New page: add it to the `PAGES` list in `scripts/build-shared.js` with its
+  menu key and whether it shows the closing band.
+- Never edit the marked blocks inside a page; the next build overwrites them.
+
+Shared styles for these pieces live in `site-shell.css`.
 
 ## Case Studies
 

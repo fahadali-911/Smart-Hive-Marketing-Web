@@ -5,7 +5,8 @@
   "description": "SmartHive Marketing production website",
   "scripts": {
     "dev": "node preview-server.js",
-    "check": "node --check contact.js && node --check audit-modal.js && node --check preview-server.js && node --check blogs/blog.js && node --check blogs/blog-content.js && node --check blogs/blog-preview.js && node --check home-hero-carousel.js"
+    "check": "node --check contact.js && node --check audit-modal.js && node --check preview-server.js && node --check blogs/blog.js && node --check blogs/blog-content.js && node --check blogs/blog-preview.js && node --check home-hero-carousel.js && node --check scripts/build-shared.js && node scripts/build-shared.js --check",
+    "build:shared": "node scripts/build-shared.js"
   },
   "engines": {
     "node": ">=20"
